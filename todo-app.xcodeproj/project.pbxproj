@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6DAB195D28AD531000536430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB195C28AD531000536430 /* AppDelegate.swift */; };
 		6DAB195F28AD531000536430 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB195E28AD531000536430 /* SceneDelegate.swift */; };
-		6DAB196628AD531100536430 /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DAB196528AD531100536430 /* AppIcons.xcassets */; };
+		6DAB196628AD531100536430 /* AppIconsSet.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DAB196528AD531100536430 /* AppIconsSet.xcassets */; };
 		6DAB196928AD531100536430 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DAB196728AD531100536430 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -17,9 +17,13 @@
 		6DAB195928AD531000536430 /* todo-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "todo-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DAB195C28AD531000536430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DAB195E28AD531000536430 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6DAB196528AD531100536430 /* AppIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcons.xcassets; sourceTree = "<group>"; };
-		6DAB196828AD531100536430 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6DAB196A28AD531100536430 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DAB196528AD531100536430 /* AppIconsSet.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIconsSet.xcassets; sourceTree = "<group>"; };
+		6DAB196A28AD531100536430 /* AppConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppConfig.plist; sourceTree = "<group>"; };
+		6DAB197128AD683500536430 /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
+		6DAB197328AD689500536430 /* TEST.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TEST.xcconfig; sourceTree = "<group>"; };
+		6DAB197428AD68B000536430 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
+		6DAB197728AD69FF00536430 /* BASE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BASE.xcconfig; sourceTree = "<group>"; };
+		6DAB197828AD6A5400536430 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +60,6 @@
 				6DAB195C28AD531000536430 /* AppDelegate.swift */,
 				6DAB195E28AD531000536430 /* SceneDelegate.swift */,
 				6DAB196728AD531100536430 /* LaunchScreen.storyboard */,
-				6DAB196A28AD531100536430 /* Info.plist */,
 			);
 			path = "todo-app";
 			sourceTree = "<group>";
@@ -64,9 +67,22 @@
 		6DAB197028AD5A5D00536430 /* _AppConfig */ = {
 			isa = PBXGroup;
 			children = (
-				6DAB196528AD531100536430 /* AppIcons.xcassets */,
+				6DAB197228AD685D00536430 /* Configurations */,
+				6DAB196A28AD531100536430 /* AppConfig.plist */,
+				6DAB196528AD531100536430 /* AppIconsSet.xcassets */,
 			);
 			path = _AppConfig;
+			sourceTree = "<group>";
+		};
+		6DAB197228AD685D00536430 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				6DAB197728AD69FF00536430 /* BASE.xcconfig */,
+				6DAB197128AD683500536430 /* DEV.xcconfig */,
+				6DAB197428AD68B000536430 /* PROD.xcconfig */,
+				6DAB197328AD689500536430 /* TEST.xcconfig */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,7 +126,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 6DAB195028AD531000536430;
 			productRefGroup = 6DAB195A28AD531000536430 /* Products */;
@@ -128,7 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DAB196928AD531100536430 /* LaunchScreen.storyboard in Resources */,
-				6DAB196628AD531100536430 /* AppIcons.xcassets in Resources */,
+				6DAB196628AD531100536430 /* AppIconsSet.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +165,7 @@
 		6DAB196728AD531100536430 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6DAB196828AD531100536430 /* Base */,
+				6DAB197828AD6A5400536430 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -158,8 +173,9 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6DAB196B28AD531100536430 /* Debug */ = {
+		6DAB196B28AD531100536430 /* dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DAB197728AD69FF00536430 /* BASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -216,10 +232,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Debug;
+			name = dev;
 		};
-		6DAB196C28AD531100536430 /* Release */ = {
+		6DAB196C28AD531100536430 /* test */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DAB197728AD69FF00536430 /* BASE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -270,10 +287,11 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = test;
 		};
-		6DAB196E28AD531100536430 /* Debug */ = {
+		6DAB196E28AD531100536430 /* dev */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DAB197128AD683500536430 /* DEV.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -281,7 +299,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJC3HHT8LN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "todo-app/Info.plist";
+				INFOPLIST_FILE = "todo-app/_AppConfig/AppConfig.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -298,10 +316,11 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = dev;
 		};
-		6DAB196F28AD531100536430 /* Release */ = {
+		6DAB196F28AD531100536430 /* test */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DAB197328AD689500536430 /* TEST.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,7 +328,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JJC3HHT8LN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "todo-app/Info.plist";
+				INFOPLIST_FILE = "todo-app/_AppConfig/AppConfig.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -326,7 +345,91 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Release;
+			name = test;
+		};
+		6DAB197528AD699E00536430 /* prod */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DAB197728AD69FF00536430 /* BASE.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = prod;
+		};
+		6DAB197628AD699E00536430 /* prod */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DAB197428AD68B000536430 /* PROD.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JJC3HHT8LN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "todo-app/_AppConfig/AppConfig.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.polykuzin.todo-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = prod;
 		};
 /* End XCBuildConfiguration section */
 
@@ -334,20 +437,22 @@
 		6DAB195428AD531000536430 /* Build configuration list for PBXProject "todo-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6DAB196B28AD531100536430 /* Debug */,
-				6DAB196C28AD531100536430 /* Release */,
+				6DAB196B28AD531100536430 /* dev */,
+				6DAB196C28AD531100536430 /* test */,
+				6DAB197528AD699E00536430 /* prod */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = prod;
 		};
 		6DAB196D28AD531100536430 /* Build configuration list for PBXNativeTarget "todo-app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6DAB196E28AD531100536430 /* Debug */,
-				6DAB196F28AD531100536430 /* Release */,
+				6DAB196E28AD531100536430 /* dev */,
+				6DAB196F28AD531100536430 /* test */,
+				6DAB197628AD699E00536430 /* prod */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = prod;
 		};
 /* End XCConfigurationList section */
 	};
