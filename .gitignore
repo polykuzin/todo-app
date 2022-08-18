@@ -1,0 +1,22 @@
+
+## App packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+## Playgrounds
+*.xctimeline
+*.xcworkspace
+
+# Swift Package Manager
+.build/
+.swiftpm
+
+## User settings
+xcuserdata/
