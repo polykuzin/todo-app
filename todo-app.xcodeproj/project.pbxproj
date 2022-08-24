@@ -25,6 +25,7 @@
 		6DCDA24728B634850028B849 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24628B634850028B849 /* .env */; };
 		6DCDA24B28B63AAF0028B849 /* feature-actions.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24A28B63AAF0028B849 /* feature-actions.yml */; };
 		6DCDA24D28B646670028B849 /* release-actions.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24C28B646670028B849 /* release-actions.yml */; };
+		6DCDA24F28B64CDC0028B849 /* KeyChain in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24E28B64CDC0028B849 /* KeyChain */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		6DCDA24628B634850028B849 /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
 		6DCDA24A28B63AAF0028B849 /* feature-actions.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "feature-actions.yml"; sourceTree = "<group>"; };
 		6DCDA24C28B646670028B849 /* release-actions.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "release-actions.yml"; sourceTree = "<group>"; };
+		6DCDA24E28B64CDC0028B849 /* KeyChain */ = {isa = PBXFileReference; lastKnownFileType = text; path = KeyChain; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				6DCDA24028B59D0E0028B849 /* Appfile */,
 				6DCDA24128B59D0E0028B849 /* Fastfile */,
+				6DCDA24E28B64CDC0028B849 /* KeyChain */,
 				6DCDA24228B59D0E0028B849 /* Matchfile */,
 			);
 			path = fastlane;
@@ -230,6 +233,7 @@
 				6DCDA24D28B646670028B849 /* release-actions.yml in Resources */,
 				6DCDA24728B634850028B849 /* .env in Resources */,
 				6DCDA23E28B591850028B849 /* AppColors.xcassets in Resources */,
+				6DCDA24F28B64CDC0028B849 /* KeyChain in Resources */,
 				6DAB197A28AD6A9900536430 /* .gitignore in Resources */,
 				6DCDA24528B59D0E0028B849 /* Matchfile in Resources */,
 				6DCDA24B28B63AAF0028B849 /* feature-actions.yml in Resources */,
@@ -392,7 +396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = appColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JJC3HHT8LN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "todo-app/_AppConfig/AppConfig.plist";
@@ -427,7 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = appColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = JJC3HHT8LN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "todo-app/_AppConfig/AppConfig.plist";
@@ -518,7 +522,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = appColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JJC3HHT8LN;
 				GENERATE_INFOPLIST_FILE = YES;

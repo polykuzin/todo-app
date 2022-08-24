@@ -1,37 +1,33 @@
+
+# Файл, где лежат функции с кейЧейном
+import "KeyChain"
+
+# Наша любимая дефолтная платформа
 default_platform(:ios)
 
-DEVELOPER_APP_ID = ENV["DEVELOPER_APP_ID"]
-DEVELOPER_APP_IDENTIFIER = ENV["DEVELOPER_APP_IDENTIFIER"]
-PROVISIONING_PROFILE_SPECIFIER = ENV["PROVISIONING_PROFILE_SPECIFIER"]
-TEMP_KEYCHAIN_USER = ENV["TEMP_KEYCHAIN_USER"]
-TEMP_KEYCHAIN_PASSWORD = ENV["TEMP_KEYCHAIN_PASSWORD"]
-APPLE_ISSUER_ID = ENV["APPLE_ISSUER_ID"]
+
 APPLE_KEY_ID = ENV["APPLE_KEY_ID"]
+
+APPLE_ISSUER_ID = ENV["APPLE_ISSUER_ID"]
+
+DEVELOPER_APP_ID = ENV["DEVELOPER_APP_ID"]
+
 APPLE_KEY_CONTENT = ENV["APPLE_KEY_CONTENT"]
+
 GIT_AUTHORIZATION = ENV["GIT_AUTHORIZATION"]
 
-def delete_temp_keychain(name)
-  delete_keychain(
-    name: name
-  ) if File.exist? File.expand_path("~/Library/Keychains/#{name}-db")
-end
+TEMP_KEYCHAIN_USER = ENV["TEMP_KEYCHAIN_USER"]
 
-def create_temp_keychain(name, password)
-  create_keychain(
-    name: name,
-    password: password,
-    unlock: false,
-    timeout: 0
-  )
-end
+TEMP_KEYCHAIN_PASSWORD = ENV["TEMP_KEYCHAIN_PASSWORD"]
 
-def ensure_temp_keychain(name, password)
-  delete_temp_keychain(name)
-  create_temp_keychain(name, password)
-end
+DEVELOPER_APP_IDENTIFIER = ENV["DEVELOPER_APP_IDENTIFIER"]
+
+PROVISIONING_PROFILE_SPECIFIER = ENV["PROVISIONING_PROFILE_SPECIFIER"]
 
 platform :ios do
-  lane :closed_beta do
+  
+  lane :closed_beta do |scheme|
+    environment = scheme[:environment]
     keychain_name = TEMP_KEYCHAIN_USER
     keychain_password = TEMP_KEYCHAIN_PASSWORD
     ensure_temp_keychain(keychain_name, keychain_password)
@@ -44,7 +40,10 @@ platform :ios do
       in_house: false
     )
     
-    increment_build_number(xcodeproj: "todo-app.xcodeproj")
+    increment_build_number(
+      build_number: latest_testflight_build_number + 1,
+      xcodeproj: "todo-app.xcodeproj"
+    )
 
     match(
       type: 'appstore',
@@ -57,10 +56,10 @@ platform :ios do
     )
 
     gym(
-      configuration: "test",
+      configuration: environment,
       project: "todo-app.xcodeproj",
       clean: true,
-      scheme: "test todo-app",
+      scheme: "#{environment} todo-app",
       export_method: "app-store",
       export_options: {
         provisioningProfiles: { 
