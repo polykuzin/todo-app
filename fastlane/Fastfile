@@ -73,19 +73,16 @@ platform :ios do
         }
       }
     )
-  end
-  
-  lane :closed_beta do
 
-#    upload_to_testflight(
-#      apple_id: "#{DEVELOPER_APP_ID}",
-#      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
-#      skip_waiting_for_build_processing: true,
-#      skip_submission: true,
-#      distribute_external: false,
-#      notify_external_testers: false,
-#      ipa: "./todo-app.ipa"
-#    )
+    upload_to_testflight(
+      apple_id: "#{DEVELOPER_APP_ID}",
+      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+      skip_waiting_for_build_processing: true,
+      skip_submission: true,
+      distribute_external: false,
+      notify_external_testers: false,
+      ipa: "./todo-app.ipa"
+    )
 
     delete_temp_keychain(keychain_name)
   end
