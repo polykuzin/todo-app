@@ -19,7 +19,7 @@ jobs:
 
     building:
         name: Building
-        needs: preparing
+        needs: prepare
         runs-on: macOS-latest
         
         steps:
