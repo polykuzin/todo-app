@@ -23,8 +23,8 @@
 		6DCDA24428B59D0E0028B849 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24128B59D0E0028B849 /* Fastfile */; };
 		6DCDA24528B59D0E0028B849 /* Matchfile in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24228B59D0E0028B849 /* Matchfile */; };
 		6DCDA24728B634850028B849 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24628B634850028B849 /* .env */; };
-		6DCDA24B28B63AAF0028B849 /* feature_actions in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24A28B63AAF0028B849 /* feature_actions */; };
-		6DCDA24D28B646670028B849 /* release_actions in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24C28B646670028B849 /* release_actions */; };
+		6DCDA24B28B63AAF0028B849 /* feature-actions in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24A28B63AAF0028B849 /* feature-actions */; };
+		6DCDA24D28B646670028B849 /* release-actions in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24C28B646670028B849 /* release-actions */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +50,8 @@
 		6DCDA24128B59D0E0028B849 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		6DCDA24228B59D0E0028B849 /* Matchfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Matchfile; sourceTree = "<group>"; };
 		6DCDA24628B634850028B849 /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
-		6DCDA24A28B63AAF0028B849 /* feature_actions */ = {isa = PBXFileReference; lastKnownFileType = text; path = feature_actions; sourceTree = "<group>"; };
-		6DCDA24C28B646670028B849 /* release_actions */ = {isa = PBXFileReference; lastKnownFileType = text; path = release_actions; sourceTree = "<group>"; };
+		6DCDA24A28B63AAF0028B849 /* feature-actions */ = {isa = PBXFileReference; lastKnownFileType = text; path = "feature-actions"; sourceTree = "<group>"; };
+		6DCDA24C28B646670028B849 /* release-actions */ = {isa = PBXFileReference; lastKnownFileType = text; path = "release-actions"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +161,8 @@
 		6DCDA24928B639EE0028B849 /* workflows */ = {
 			isa = PBXGroup;
 			children = (
-				6DCDA24A28B63AAF0028B849 /* feature_actions */,
-				6DCDA24C28B646670028B849 /* release_actions */,
+				6DCDA24A28B63AAF0028B849 /* feature-actions */,
+				6DCDA24C28B646670028B849 /* release-actions */,
 			);
 			path = workflows;
 			sourceTree = "<group>";
@@ -227,12 +227,12 @@
 				6DCDA24428B59D0E0028B849 /* Fastfile in Resources */,
 				6DAB196928AD531100536430 /* LaunchScreen.storyboard in Resources */,
 				6DCDA24328B59D0E0028B849 /* Appfile in Resources */,
-				6DCDA24D28B646670028B849 /* release_actions in Resources */,
+				6DCDA24D28B646670028B849 /* release-actions in Resources */,
 				6DCDA24728B634850028B849 /* .env in Resources */,
 				6DCDA23E28B591850028B849 /* AppColors.xcassets in Resources */,
 				6DAB197A28AD6A9900536430 /* .gitignore in Resources */,
 				6DCDA24528B59D0E0028B849 /* Matchfile in Resources */,
-				6DCDA24B28B63AAF0028B849 /* feature_actions in Resources */,
+				6DCDA24B28B63AAF0028B849 /* feature-actions in Resources */,
 				6DAB196628AD531100536430 /* AppConfig.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
