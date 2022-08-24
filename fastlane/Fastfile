@@ -61,18 +61,18 @@ platform :ios do
       api_key: api_key
     )
 
-#    gym(
-#      configuration: environment,
-#      project: "todo-app.xcodeproj",
-#      clean: true,
-#      scheme: "#{environment} todo-app",
-#      export_method: "app-store",
-#      export_options: {
-#        provisioningProfiles: {
-#            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
-#        }
-#      }
-#    )
+    gym(
+      configuration: environment,
+      project: "todo-app.xcodeproj",
+      clean: true,
+      scheme: "#{environment} todo-app",
+      export_method: "app-store",
+      export_options: {
+        provisioningProfiles: {
+            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
+        }
+      }
+    )
   end
   
   lane :closed_beta do
