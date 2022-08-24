@@ -23,6 +23,9 @@ jobs:
         runs-on: macOS-latest
         
         steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+              
             - name: Building the project
               uses: maierj/fastlane-action@v2.2.0
               with:
