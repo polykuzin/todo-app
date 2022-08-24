@@ -13,7 +13,7 @@ jobs:
               uses: actions/checkout@v3
             
             - name: Cleaning the project
-              uses: maierj/fastlane-action@v1.4.0
+              uses: maierj/fastlane-action@v2.2.0
               with:
                 lane: 'clean'
 
@@ -24,9 +24,10 @@ jobs:
         
         steps:
             - name: Building the project
-              uses: maierj/fastlane-action@v1.4.0
+              uses: maierj/fastlane-action@v2.2.0
               with:
-                lane: build environment:"test"
+                lane: 'build'
+                options: '{ "environment": "test", "option2": "value2" }'
               env:
                 APPLE_KEY_ID: '${{ secrets.APPLE_KEY_ID }}'
                 MATCH_PASSWORD: '${{ secrets.MATCH_PASSWORD }}'
