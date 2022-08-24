@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SceneDelegate : UIResponder {
     
-    var window: UIWindow?
+    public var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let controller = BaseSplitController(UIHostingController(rootView: TabbarView()), UIViewController())
+        self.window = UIWindow(windowScene: windowScene)
+        self.window?.rootViewController = controller
+        self.window?.makeKeyAndVisible()
     }
 }
 
