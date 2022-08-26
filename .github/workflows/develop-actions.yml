@@ -1,6 +1,7 @@
 name: develop actions
 on:
     pull_request:
+        types: [closed]
         branches:
         - 'develop'
         - 'release/**-alpha'
@@ -24,10 +25,10 @@ jobs:
                 lane: 'lint_code'
 
     building:
+        if: github.event.pull_request.merged == 'true'
         name: Building
         needs: prepare
         runs-on: macOS-latest
-        
         steps:
             - name: Checkout repository
               uses: actions/checkout@v3

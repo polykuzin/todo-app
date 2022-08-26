@@ -1,6 +1,6 @@
 
 # Репозиторий со всеми нужными сертификатами на гите
-git_url("https://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@github.com/polykuzin/certificates.git")
+git_url("https://Polykuzin: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@github.com/polykuzin/certificates.git")
 
 # их можно хранить не толькро на гите, поэтому
 # нужно жёстко проставить тип для матча
