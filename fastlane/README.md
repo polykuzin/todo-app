@@ -23,18 +23,18 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 
 
-### ios build
+### ios lint_code
 
 ```sh
-[bundle exec] fastlane ios build
+[bundle exec] fastlane ios lint_code
 ```
 
 
 
-### ios testflight
+### ios build
 
 ```sh
-[bundle exec] fastlane ios testflight
+[bundle exec] fastlane ios build
 ```
 
 

@@ -5,7 +5,6 @@ import "KeyChain"
 # Наша любимая дефолтная платформа
 default_platform(:ios)
 
-
 APPLE_KEY_ID = ENV["APPLE_KEY_ID"]
 
 APPLE_ISSUER_ID = ENV["APPLE_ISSUER_ID"]
@@ -32,64 +31,64 @@ platform :ios do
         clean_build_artifacts
     end
   
-    lane :linting do
+    lane :lint_code do
         swiftlint(
-            mode: :lint,                            # SwiftLint mode: :lint (default) or :autocorrect
-            output_file: "swiftlint.result.json",   # The path of the output file (optional)
-            reporter: "json",                       # The custom reporter to use (optional)
-            config_file: ".swiftlint.yml",          # The path of the configuration file (optional)
-            ignore_exit_status: false,              # Allow fastlane to continue even if SwiftLint returns a non-zero exit status (Default: false)
-            quiet: false,                           # Don't print status logs like 'Linting ' & 'Done linting' (Default: false)
-            strict: true                            # Fail on warnings? (Default: false)
+            mode: :lint, # SwiftLint mode: :lint (default) or :autocorrect
+            output_file: "swiftlint.result.json", # The path of the output file (optional)
+            reporter: "json", # The custom reporter to use (optional)
+            config_file: ".swiftlint.yml", # The path of the configuration file (optional)
+            ignore_exit_status: false, # Allow fastlane to continue even if SwiftLint returns a non-zero exit status (Default: false)
+            quiet: false, # Don't print status logs like 'Linting ' & 'Done linting' (Default: false)
+            strict: true # Fail on warnings? (Default: false)
         )
     end
-  
-  lane :build do |scheme|
-    environment = scheme[:environment]
-    keychain_name = TEMP_KEYCHAIN_USER
-    keychain_password = TEMP_KEYCHAIN_PASSWORD
-    ensure_temp_keychain(keychain_name, keychain_password)
 
-    api_key = app_store_connect_api_key(
-      key_id: APPLE_KEY_ID,
-      issuer_id: APPLE_ISSUER_ID,
-      key_content: APPLE_KEY_CONTENT.gsub('\n', '\\n'),
-      duration: 1200,
-      in_house: false
-    )
-    
-    increment_build_number(
-      build_number: latest_testflight_build_number + 1,
-      xcodeproj: "todo-app.xcodeproj"
-    )
+    # TODO: Нужно в зависимости от среды собирать сборку в определённую группу
+    lane :build do |scheme|
+        environment = scheme[:environment]
+        keychain_name = TEMP_KEYCHAIN_USER
+        keychain_password = TEMP_KEYCHAIN_PASSWORD
+        ensure_temp_keychain(keychain_name, keychain_password)
 
-    match(
-      type: 'appstore',
-      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
-      git_basic_authorization: Base64.strict_encode64(GIT_AUTHORIZATION),
-      readonly: true,
-      keychain_name: keychain_name,
-      keychain_password: keychain_password,
-      api_key: api_key
-    )
+        api_key = app_store_connect_api_key(
+            key_id: APPLE_KEY_ID,
+            issuer_id: APPLE_ISSUER_ID,
+            key_content: APPLE_KEY_CONTENT.gsub('\n', '\\n'),
+            duration: 1200,
+            in_house: false
+        )
 
-    gym(
-      configuration: environment,
-      project: "todo-app.xcodeproj",
-      clean: true,
-      scheme: "#{environment} todo-app",
-      export_method: "app-store",
-      export_options: {
-        provisioningProfiles: {
-            DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
-        }
-      }
-    )
+        increment_build_number(
+            build_number: latest_testflight_build_number + 1,
+            xcodeproj: "todo-app.xcodeproj"
+        )
 
-  end
-  
-  after_all do |lane, options|
-      delete_temp_keychain(keychain_name)
-  end
+        match(
+            type: 'appstore',
+            app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+            git_basic_authorization: Base64.strict_encode64(GIT_AUTHORIZATION),
+            readonly: true,
+            keychain_name: keychain_name,
+            keychain_password: keychain_password,
+            api_key: api_key
+        )
+
+        gym(
+            configuration: environment,
+            project: "todo-app.xcodeproj",
+            clean: true,
+            scheme: "#{environment} todo-app",
+            export_method: "app-store",
+            export_options: {
+                provisioningProfiles: {
+                    DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
+                }
+            }
+        )
+    end
+
+    after_all do |lane, options|
+        delete_temp_keychain("todo-keychain")
+    end
 
 end

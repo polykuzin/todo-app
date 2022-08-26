@@ -1,5 +1,11 @@
 included:
   - todo-app
+  
+excluded:
+  - .github/*
+  - fastlane/*
+  - .swiftlint.yml
+  - .gitignore.yml
 
 disabled_rules:
   - trailing_whitespace

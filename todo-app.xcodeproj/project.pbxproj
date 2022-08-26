@@ -13,7 +13,6 @@
 		6D07D71C28B9464F00CA840F /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D07D71B28B9464F00CA840F /* EmptyView.swift */; };
 		6D07D71F28B9467F00CA840F /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D07D71E28B9467F00CA840F /* SummaryViewModel.swift */; };
 		6D07D72228B9469C00CA840F /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D07D72128B9469C00CA840F /* TaskModel.swift */; };
-		6D07D72528B9498700CA840F /* Prepare in Resources */ = {isa = PBXBuildFile; fileRef = 6D07D72428B9498700CA840F /* Prepare */; };
 		6D07D72728B94A2400CA840F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6D07D72628B94A2400CA840F /* .swiftlint.yml */; };
 		6D07D72A28B94CE500CA840F /* release-actions.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6D07D72928B94CE500CA840F /* release-actions.yml */; };
 		6DAB195D28AD531000536430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB195C28AD531000536430 /* AppDelegate.swift */; };
@@ -43,7 +42,6 @@
 		6D07D71B28B9464F00CA840F /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		6D07D71E28B9467F00CA840F /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
 		6D07D72128B9469C00CA840F /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
-		6D07D72428B9498700CA840F /* Prepare */ = {isa = PBXFileReference; lastKnownFileType = text; path = Prepare; sourceTree = "<group>"; };
 		6D07D72628B94A2400CA840F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6D07D72828B94AA100CA840F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D07D72928B94CE500CA840F /* release-actions.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "release-actions.yml"; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 				6DCDA24128B59D0E0028B849 /* Fastfile */,
 				6DCDA24E28B64CDC0028B849 /* KeyChain */,
 				6DCDA24228B59D0E0028B849 /* Matchfile */,
-				6D07D72428B9498700CA840F /* Prepare */,
 			);
 			path = fastlane;
 			sourceTree = "<group>";
@@ -288,7 +285,6 @@
 			files = (
 				6D07D72728B94A2400CA840F /* .swiftlint.yml in Resources */,
 				6DCDA24428B59D0E0028B849 /* Fastfile in Resources */,
-				6D07D72528B9498700CA840F /* Prepare in Resources */,
 				6D07D72A28B94CE500CA840F /* release-actions.yml in Resources */,
 				6DAB196928AD531100536430 /* LaunchScreen.storyboard in Resources */,
 				6DCDA24328B59D0E0028B849 /* Appfile in Resources */,
