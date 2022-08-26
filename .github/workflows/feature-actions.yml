@@ -10,16 +10,16 @@ jobs:
         
         steps:
             - name: Checkout repository
-                uses: actions/checkout@v3
+              uses: actions/checkout@v3
             
             - name: Cleaning the project
-                uses: maierj/fastlane-action@v2.2.0
-                with:
+              uses: maierj/fastlane-action@v2.2.0
+              with:
                 lane: 'clean'
                 
             - name: Linting the project
-                uses: maierj/fastlane-action@v2.2.0
-                with:
+              uses: maierj/fastlane-action@v2.2.0
+              with:
                 lane: 'linting'
     
     building:
@@ -29,14 +29,14 @@ jobs:
         
         steps:
             - name: Checkout repository
-                uses: actions/checkout@v3
+              uses: actions/checkout@v3
             
             - name: Building the project
-                uses: maierj/fastlane-action@v2.2.0
-                with:
+              uses: maierj/fastlane-action@v2.2.0
+              with:
                 lane: 'build'
-                options: '{ "environment": "dev" }'
-                env:
+              options: '{ "environment": "dev" }'
+              env:
                 APPLE_KEY_ID: '${{ secrets.APPLE_KEY_ID }}'
                 MATCH_PASSWORD: '${{ secrets.MATCH_PASSWORD }}'
                 APPLE_ISSUER_ID: '${{ secrets.APPLE_ISSUER_ID }}'
