@@ -26,11 +26,23 @@ PROVISIONING_PROFILE_SPECIFIER = ENV["PROVISIONING_PROFILE_SPECIFIER"]
 
 platform :ios do
 
-  lane :clean do
-    xcclean
-    clear_derived_data
-    clean_build_artifacts
-  end
+    lane :clean do
+        xcclean
+        clear_derived_data
+        clean_build_artifacts
+    end
+  
+    lane :linting do
+        swiftlint(
+            mode: :lint,                            # SwiftLint mode: :lint (default) or :autocorrect
+            output_file: "swiftlint.result.json",   # The path of the output file (optional)
+            reporter: "json",                       # The custom reporter to use (optional)
+            config_file: ".swiftlint.yml",          # The path of the configuration file (optional)
+            ignore_exit_status: false,              # Allow fastlane to continue even if SwiftLint returns a non-zero exit status (Default: false)
+            quiet: false,                           # Don't print status logs like 'Linting ' & 'Done linting' (Default: false)
+            strict: true                            # Fail on warnings? (Default: false)
+        )
+    end
   
   lane :build do |scheme|
     environment = scheme[:environment]
@@ -74,17 +86,10 @@ platform :ios do
       }
     )
 
-    upload_to_testflight(
-      apple_id: "#{DEVELOPER_APP_ID}",
-      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
-      skip_waiting_for_build_processing: true,
-      skip_submission: true,
-      distribute_external: false,
-      notify_external_testers: false,
-      ipa: "./todo-app.ipa"
-    )
-
-    delete_temp_keychain(keychain_name)
+  end
+  
+  after_all do |lane, options|
+      delete_temp_keychain(keychain_name)
   end
 
 end
