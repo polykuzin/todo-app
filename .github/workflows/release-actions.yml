@@ -34,9 +34,9 @@ jobs:
             
             - name: Building the project
               uses: maierj/fastlane-action@v2.2.0
-                with:
-                  lane: 'build'
-              options: '{ "environment": "prod" }'
+              with:
+                lane: 'build'
+                options: '{ "environment": "prod" }'
               env:
                 APPLE_KEY_ID: '${{ secrets.APPLE_KEY_ID }}'
                 MATCH_PASSWORD: '${{ secrets.MATCH_PASSWORD }}'
