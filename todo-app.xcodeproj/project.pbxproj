@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D07D71628B9460C00CA840F /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D07D71528B9460C00CA840F /* SummaryView.swift */; };
+		6D07D71828B9462D00CA840F /* SummaryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D07D71728B9462D00CA840F /* SummaryRowView.swift */; };
+		6D07D71A28B9463E00CA840F /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D07D71928B9463E00CA840F /* AddView.swift */; };
+		6D07D71C28B9464F00CA840F /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D07D71B28B9464F00CA840F /* EmptyView.swift */; };
+		6D07D71F28B9467F00CA840F /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D07D71E28B9467F00CA840F /* SummaryViewModel.swift */; };
+		6D07D72228B9469C00CA840F /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D07D72128B9469C00CA840F /* TaskModel.swift */; };
+		6D07D72728B94A2400CA840F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6D07D72628B94A2400CA840F /* .swiftlint.yml */; };
+		6D07D72A28B94CE500CA840F /* release-actions.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6D07D72928B94CE500CA840F /* release-actions.yml */; };
 		6DAB195D28AD531000536430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB195C28AD531000536430 /* AppDelegate.swift */; };
 		6DAB195F28AD531000536430 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB195E28AD531000536430 /* SceneDelegate.swift */; };
 		6DAB196628AD531100536430 /* AppConfig.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DAB196528AD531100536430 /* AppConfig.xcassets */; };
@@ -22,12 +30,22 @@
 		6DCDA24328B59D0E0028B849 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24028B59D0E0028B849 /* Appfile */; };
 		6DCDA24428B59D0E0028B849 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24128B59D0E0028B849 /* Fastfile */; };
 		6DCDA24528B59D0E0028B849 /* Matchfile in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24228B59D0E0028B849 /* Matchfile */; };
-		6DCDA24728B634850028B849 /* .env in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24628B634850028B849 /* .env */; };
-		6DCDA24B28B63AAF0028B849 /* feature actions in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24A28B63AAF0028B849 /* feature actions */; };
-		6DCDA24D28B646670028B849 /* release actions in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24C28B646670028B849 /* release actions */; };
+		6DCDA24B28B63AAF0028B849 /* feature-actions.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24A28B63AAF0028B849 /* feature-actions.yml */; };
+		6DCDA24D28B646670028B849 /* develop-actions.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24C28B646670028B849 /* develop-actions.yml */; };
+		6DCDA24F28B64CDC0028B849 /* KeyChain in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24E28B64CDC0028B849 /* KeyChain */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D07D71528B9460C00CA840F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
+		6D07D71728B9462D00CA840F /* SummaryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRowView.swift; sourceTree = "<group>"; };
+		6D07D71928B9463E00CA840F /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		6D07D71B28B9464F00CA840F /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		6D07D71E28B9467F00CA840F /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
+		6D07D72128B9469C00CA840F /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		6D07D72628B94A2400CA840F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		6D07D72828B94AA100CA840F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6D07D72928B94CE500CA840F /* release-actions.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "release-actions.yml"; sourceTree = "<group>"; };
+		6D07D72C28B94EFE00CA840F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6DAB195928AD531000536430 /* todo-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "todo-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DAB195C28AD531000536430 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DAB195E28AD531000536430 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +55,6 @@
 		6DAB197328AD689500536430 /* TEST.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = TEST.xcconfig; sourceTree = "<group>"; };
 		6DAB197428AD68B000536430 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		6DAB197728AD69FF00536430 /* BASE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BASE.xcconfig; sourceTree = "<group>"; };
-		6DAB197828AD6A5400536430 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DAB197928AD6A9900536430 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6DCDA22E28B585C40028B849 /* BaseSplitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSplitController.swift; sourceTree = "<group>"; };
 		6DCDA23028B58A720028B849 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
@@ -49,9 +66,9 @@
 		6DCDA24028B59D0E0028B849 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
 		6DCDA24128B59D0E0028B849 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		6DCDA24228B59D0E0028B849 /* Matchfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Matchfile; sourceTree = "<group>"; };
-		6DCDA24628B634850028B849 /* .env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .env; sourceTree = "<group>"; };
-		6DCDA24A28B63AAF0028B849 /* feature actions */ = {isa = PBXFileReference; lastKnownFileType = text; path = "feature actions"; sourceTree = "<group>"; };
-		6DCDA24C28B646670028B849 /* release actions */ = {isa = PBXFileReference; lastKnownFileType = text; path = "release actions"; sourceTree = "<group>"; };
+		6DCDA24A28B63AAF0028B849 /* feature-actions.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "feature-actions.yml"; sourceTree = "<group>"; };
+		6DCDA24C28B646670028B849 /* develop-actions.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "develop-actions.yml"; sourceTree = "<group>"; };
+		6DCDA24E28B64CDC0028B849 /* KeyChain */ = {isa = PBXFileReference; lastKnownFileType = text; path = KeyChain; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +82,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D07D71328B945C900CA840F /* SummaryModule */ = {
+			isa = PBXGroup;
+			children = (
+				6D07D72028B9468B00CA840F /* Model */,
+				6D07D71D28B9466E00CA840F /* ViewModel */,
+				6D07D71428B945F000CA840F /* View */,
+			);
+			path = SummaryModule;
+			sourceTree = "<group>";
+		};
+		6D07D71428B945F000CA840F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6D07D71928B9463E00CA840F /* AddView.swift */,
+				6D07D71B28B9464F00CA840F /* EmptyView.swift */,
+				6D07D71728B9462D00CA840F /* SummaryRowView.swift */,
+				6D07D71528B9460C00CA840F /* SummaryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6D07D71D28B9466E00CA840F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6D07D71E28B9467F00CA840F /* SummaryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6D07D72028B9468B00CA840F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D07D72128B9469C00CA840F /* TaskModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6DAB195028AD531000536430 = {
 			isa = PBXGroup;
 			children = (
-				6DCDA24628B634850028B849 /* .env */,
+				6D07D72628B94A2400CA840F /* .swiftlint.yml */,
 				6DAB197928AD6A9900536430 /* .gitignore */,
 				6DCDA24828B637F60028B849 /* .github */,
 				6DCDA23F28B59D0E0028B849 /* fastlane */,
@@ -93,6 +147,7 @@
 				6DAB197028AD5A5D00536430 /* _AppConfig */,
 				6DCDA22D28B585820028B849 /* BaseAppStuff */,
 				6DAB196728AD531100536430 /* LaunchScreen.storyboard */,
+				6D07D71328B945C900CA840F /* SummaryModule */,
 				6DCDA23428B58BAC0028B849 /* TabbarModule */,
 			);
 			path = "todo-app";
@@ -145,6 +200,7 @@
 			children = (
 				6DCDA24028B59D0E0028B849 /* Appfile */,
 				6DCDA24128B59D0E0028B849 /* Fastfile */,
+				6DCDA24E28B64CDC0028B849 /* KeyChain */,
 				6DCDA24228B59D0E0028B849 /* Matchfile */,
 			);
 			path = fastlane;
@@ -161,8 +217,9 @@
 		6DCDA24928B639EE0028B849 /* workflows */ = {
 			isa = PBXGroup;
 			children = (
-				6DCDA24A28B63AAF0028B849 /* feature actions */,
-				6DCDA24C28B646670028B849 /* release actions */,
+				6DCDA24C28B646670028B849 /* develop-actions.yml */,
+				6DCDA24A28B63AAF0028B849 /* feature-actions.yml */,
+				6D07D72928B94CE500CA840F /* release-actions.yml */,
 			);
 			path = workflows;
 			sourceTree = "<group>";
@@ -177,6 +234,7 @@
 				6DAB195528AD531000536430 /* Sources */,
 				6DAB195628AD531000536430 /* Frameworks */,
 				6DAB195728AD531000536430 /* Resources */,
+				6D07D72328B9494900CA840F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -208,6 +266,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 6DAB195028AD531000536430;
 			productRefGroup = 6DAB195A28AD531000536430 /* Products */;
@@ -224,20 +283,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D07D72728B94A2400CA840F /* .swiftlint.yml in Resources */,
 				6DCDA24428B59D0E0028B849 /* Fastfile in Resources */,
+				6D07D72A28B94CE500CA840F /* release-actions.yml in Resources */,
 				6DAB196928AD531100536430 /* LaunchScreen.storyboard in Resources */,
 				6DCDA24328B59D0E0028B849 /* Appfile in Resources */,
-				6DCDA24D28B646670028B849 /* release actions in Resources */,
-				6DCDA24728B634850028B849 /* .env in Resources */,
+				6DCDA24D28B646670028B849 /* develop-actions.yml in Resources */,
 				6DCDA23E28B591850028B849 /* AppColors.xcassets in Resources */,
+				6DCDA24F28B64CDC0028B849 /* KeyChain in Resources */,
 				6DAB197A28AD6A9900536430 /* .gitignore in Resources */,
 				6DCDA24528B59D0E0028B849 /* Matchfile in Resources */,
-				6DCDA24B28B63AAF0028B849 /* feature actions in Resources */,
+				6DCDA24B28B63AAF0028B849 /* feature-actions.yml in Resources */,
 				6DAB196628AD531100536430 /* AppConfig.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D07D72328B9494900CA840F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6DAB195528AD531000536430 /* Sources */ = {
@@ -245,13 +326,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DAB195D28AD531000536430 /* AppDelegate.swift in Sources */,
+				6D07D72228B9469C00CA840F /* TaskModel.swift in Sources */,
 				6DCDA23128B58A720028B849 /* BaseController.swift in Sources */,
 				6DCDA23C28B591270028B849 /* AppColors.swift in Sources */,
 				6DCDA23A28B58FEB0028B849 /* TabbarItem.swift in Sources */,
+				6D07D71C28B9464F00CA840F /* EmptyView.swift in Sources */,
 				6DAB195F28AD531000536430 /* SceneDelegate.swift in Sources */,
 				6DCDA22F28B585C40028B849 /* BaseSplitController.swift in Sources */,
+				6D07D71F28B9467F00CA840F /* SummaryViewModel.swift in Sources */,
+				6D07D71A28B9463E00CA840F /* AddView.swift in Sources */,
+				6D07D71828B9462D00CA840F /* SummaryRowView.swift in Sources */,
 				6DCDA23828B58C0C0028B849 /* TabbarView.swift in Sources */,
 				6DCDA23628B58BCD0028B849 /* TabbarType.swift in Sources */,
+				6D07D71628B9460C00CA840F /* SummaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +348,8 @@
 		6DAB196728AD531100536430 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6DAB197828AD6A5400536430 /* en */,
+				6D07D72828B94AA100CA840F /* Base */,
+				6D07D72C28B94EFE00CA840F /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -320,7 +408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -375,7 +463,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -391,9 +479,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = appColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JJC3HHT8LN;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JJC3HHT8LN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "todo-app/_AppConfig/AppConfig.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = ToDo;
@@ -403,7 +493,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -411,12 +501,14 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.polykuzin.todo-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore ru.polykuzin.todo-app";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = dev;
 		};
@@ -426,9 +518,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = appColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = JJC3HHT8LN;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JJC3HHT8LN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "todo-app/_AppConfig/AppConfig.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = ToDo;
@@ -438,7 +532,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,12 +540,14 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.polykuzin.todo-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore ru.polykuzin.todo-app";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = test;
 		};
@@ -500,7 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -518,7 +614,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = appColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JJC3HHT8LN;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -530,7 +626,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,7 +641,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = prod;
 		};
