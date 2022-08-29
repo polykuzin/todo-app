@@ -80,6 +80,7 @@ platform :ios do
             scheme: "#{environment} todo-app",
             export_method: "app-store",
             export_options: {
+                signingStyle: "manual",
                 provisioningProfiles: {
                     DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
                 }

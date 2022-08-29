@@ -45,12 +45,13 @@ struct AddView: View {
         }
         .navigationTitle("Add an Item 🖊")
         .alert(isPresented: $showAlert, content: getAlert)
+        
     }
     
     func saveButtonPressed() {
         if textIsAppropriate() {
             listViewModel.addItem(title: textFieldText)
-            presentationMode.wrappedValue.dismiss()
+//            presentationMode.wrappedValue.dismiss()
         }
     }
     
@@ -68,8 +69,9 @@ struct AddView: View {
     }
 }
 
-struct AddView_Previews: PreviewProvider {
-    static var previews: some View {
+struct AddView_Previews : PreviewProvider {
+    
+    static var previews : some View {
         Group {
             NavigationView {
                 AddView()
@@ -84,6 +86,5 @@ struct AddView_Previews: PreviewProvider {
             
         }
         .previewDevice("iPhone 13 Pro Max")
-
     }
 }

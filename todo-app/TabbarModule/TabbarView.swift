@@ -21,7 +21,7 @@ struct TabbarView : View {
                 TabView(selection: $selectedTab) {
                     add.tag(TabbarType.add)
                     summary.tag(TabbarType.summary)
-                    settings.tag(TabbarType.settings)
+//                    settings.tag(TabbarType.settings)
                 }
                 VStack(spacing: 16) {
                     Rectangle()
@@ -31,7 +31,7 @@ struct TabbarView : View {
                         TabbarItem(
                             image: Image(systemName: "plus"),
                             selected: selectedTab ==  .add,
-                            itemWidth: geometry.size.width / 3,
+                            itemWidth: geometry.size.width / 2,
                             onTap: {
                                 selectedTab = .add
                             }
@@ -39,19 +39,19 @@ struct TabbarView : View {
                         TabbarItem(
                             image: Image(systemName: "list.bullet"),
                             selected: selectedTab == .summary,
-                            itemWidth: geometry.size.width / 3,
+                            itemWidth: geometry.size.width / 2,
                             onTap: {
                                 selectedTab = .summary
                             }
                         )
-                        TabbarItem(
-                            image: Image(systemName: "gearshape"),
-                            selected: selectedTab == .settings,
-                            itemWidth: geometry.size.width / 3,
-                            onTap: {
-                                selectedTab = .settings
-                            }
-                        )
+//                        TabbarItem(
+//                            image: Image(systemName: "gearshape"),
+//                            selected: selectedTab == .settings,
+//                            itemWidth: geometry.size.width / 2,
+//                            onTap: {
+//                                selectedTab = .settings
+//                            }
+//                        )
                     }
                 }
             }
@@ -61,16 +61,13 @@ struct TabbarView : View {
     
     private var add : some View {
         AddView()
+            .environmentObject(SummaryViewModel())
+            .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
     }
     
     private var summary : some View {
         SummaryView()
-            .environmentObject(listViewModel)
-    }
-    
-    private var settings : some View {
-        SummaryView()
-            .environmentObject(listViewModel)
+            .environmentObject(SummaryViewModel())
     }
 }
 
