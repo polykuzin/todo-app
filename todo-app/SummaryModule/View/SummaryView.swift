@@ -33,12 +33,6 @@ struct SummaryView : View {
                 .listStyle(PlainListStyle())
             }
         }
-        .navigationTitle("Todo List 📝")
-        .navigationBarItems(
-            leading: EditButton(),
-            trailing:
-                NavigationLink("Add", destination: AddView())
-        )
     }
 }
 

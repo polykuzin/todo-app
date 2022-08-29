@@ -12,17 +12,11 @@ class SceneDelegate : UIResponder {
     
     public var window: UIWindow?
     
-    @StateObject
-    private var listViewModel = SummaryViewModel()
-    
+    @MainActor
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let controller = BaseSplitController(
-            UIHostingController(
-                rootView: TabbarView()
-                    .environmentObject(listViewModel)
-            ),
-            UIViewController()
+        let controller = UIHostingController(
+            rootView: ContentView()
         )
         self.window = UIWindow(windowScene: windowScene)
         self.window?.rootViewController = controller
