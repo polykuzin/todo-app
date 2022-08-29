@@ -10,6 +10,9 @@ import SwiftUI
 struct TabbarView : View {
     
     @State
+    private var action: Int? = 0
+    
+    @State
     private var selectedTab : TabbarType = .summary
     
     @EnvironmentObject
@@ -18,10 +21,13 @@ struct TabbarView : View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: Alignment.bottom) {
+                NavigationLink(destination: AddView(), tag: 1, selection: $action) {
+                    EmptyView()
+                }
                 TabView(selection: $selectedTab) {
                     add.tag(TabbarType.add)
                     summary.tag(TabbarType.summary)
-//                    settings.tag(TabbarType.settings)
+                    //                    settings.tag(TabbarType.settings)
                 }
                 VStack(spacing: 16) {
                     Rectangle()
@@ -33,7 +39,7 @@ struct TabbarView : View {
                             selected: selectedTab ==  .add,
                             itemWidth: geometry.size.width / 2,
                             onTap: {
-                                selectedTab = .add
+                                self.action = 1
                             }
                         )
                         TabbarItem(
@@ -44,14 +50,6 @@ struct TabbarView : View {
                                 selectedTab = .summary
                             }
                         )
-//                        TabbarItem(
-//                            image: Image(systemName: "gearshape"),
-//                            selected: selectedTab == .settings,
-//                            itemWidth: geometry.size.width / 2,
-//                            onTap: {
-//                                selectedTab = .settings
-//                            }
-//                        )
                     }
                 }
             }
@@ -59,7 +57,7 @@ struct TabbarView : View {
         .ignoresSafeArea(.keyboard)
     }
     
-    private var add : some View {
+    public var add : some View {
         AddView()
             .environmentObject(SummaryViewModel())
             .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)

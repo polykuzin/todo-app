@@ -22,6 +22,17 @@ struct AddView: View {
     @State
     var showAlert = false
     
+    var btnBack : some View { Button(action: {
+        self.presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+            Image(systemName: "arrow.left")
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(.appColor)
+            }
+        }
+    }
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -30,28 +41,30 @@ struct AddView: View {
                     .frame(height: 55)
                     .background(Color(UIColor.secondarySystemBackground))
                     .cornerRadius(10)
-                
-                Button(action: saveButtonPressed, label: {
-                    Text("Save".uppercased())
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.accentColor)
-                        .cornerRadius(10)
-                })
             }
+//            .frame(maxHeight: .infinity)
             .padding(14)
         }
         .navigationTitle("Add an Item 🖊")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
         .alert(isPresented: $showAlert, content: getAlert)
-        
+        .overlay(Button(action: saveButtonPressed, label: {
+            Text("Save".uppercased())
+                .foregroundColor(.white)
+                .font(.headline)
+                .frame(height: 55)
+                .frame(maxWidth: .infinity)
+                .background(Color.accentColor)
+                .cornerRadius(10)
+                .padding()
+        }), alignment: .bottom)
     }
     
     func saveButtonPressed() {
         if textIsAppropriate() {
             listViewModel.addItem(title: textFieldText)
-//            presentationMode.wrappedValue.dismiss()
+            presentationMode.wrappedValue.dismiss()
         }
     }
     
@@ -69,9 +82,8 @@ struct AddView: View {
     }
 }
 
-struct AddView_Previews : PreviewProvider {
-    
-    static var previews : some View {
+struct AddView_Previews: PreviewProvider {
+    static var previews: some View {
         Group {
             NavigationView {
                 AddView()
@@ -86,5 +98,6 @@ struct AddView_Previews : PreviewProvider {
             
         }
         .previewDevice("iPhone 13 Pro Max")
+
     }
 }
