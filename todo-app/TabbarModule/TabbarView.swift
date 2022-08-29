@@ -7,19 +7,13 @@
 
 import SwiftUI
 
-struct CartSUIView : UIViewControllerRepresentable {
-    
-    func makeUIViewController(context: Context) -> UINavigationController {
-        return UINavigationController()
-    }
-    
-    func updateUIViewController(_ uiViewController: UINavigationController, context: Context) { }
-}
-
 struct TabbarView : View {
     
     @State
     private var selectedTab : TabbarType = .summary
+    
+    @EnvironmentObject
+    var listViewModel : SummaryViewModel
     
     var body: some View {
         GeometryReader { geometry in
@@ -66,15 +60,17 @@ struct TabbarView : View {
     }
     
     private var add : some View {
-        CartSUIView()
+        AddView()
     }
     
     private var summary : some View {
-        CartSUIView()
+        SummaryView()
+            .environmentObject(listViewModel)
     }
     
     private var settings : some View {
-        CartSUIView()
+        SummaryView()
+            .environmentObject(listViewModel)
     }
 }
 

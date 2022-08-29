@@ -1,0 +1,29 @@
+
+# Гарантируем, что создана временная
+# KeyChain - это нужно, чтобы грамотно
+# положить сертификаты (для деплоя)
+def ensure_temp_keychain(name, password)
+    delete_temp_keychain(name)
+    create_temp_keychain(name, password)
+end
+
+# Если уже существует временная KeyChain,
+# то её нужно удалить, чтобы не было
+# конфликтов никаких (вдруг)
+def delete_temp_keychain(name)
+    delete_keychain(
+        name: name
+    ) if File.exist? File.expand_path("~/Library/Keychains/#{name}-db")
+end
+
+# После того, как удалили старую, если
+# она вдруг была, то сразу же создаём
+# новую, и работаем с ней дальше
+def create_temp_keychain(name, password)
+    create_keychain(
+        name: name,
+        password: password,
+        unlock: false,
+        timeout: 0
+    )
+end

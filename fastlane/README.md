@@ -15,10 +15,26 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
-### ios closed_beta
+### ios clean
 
 ```sh
-[bundle exec] fastlane ios closed_beta
+[bundle exec] fastlane ios clean
+```
+
+
+
+### ios lint_code
+
+```sh
+[bundle exec] fastlane ios lint_code
+```
+
+
+
+### ios build
+
+```sh
+[bundle exec] fastlane ios build
 ```
 
 
