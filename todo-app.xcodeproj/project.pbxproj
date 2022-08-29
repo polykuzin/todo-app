@@ -159,12 +159,12 @@
 		6DAB195B28AD531000536430 /* todo-app */ = {
 			isa = PBXGroup;
 			children = (
-				6D1C632228BD1E1C0070F482 /* Extensions */,
 				6DAB195C28AD531000536430 /* AppDelegate.swift */,
 				6D1C632528BD29040070F482 /* ContentView.swift */,
 				6DAB195E28AD531000536430 /* SceneDelegate.swift */,
 				6DAB197028AD5A5D00536430 /* _AppConfig */,
 				6DCDA22D28B585820028B849 /* BaseAppStuff */,
+				6D1C632228BD1E1C0070F482 /* Extensions */,
 				6DAB196728AD531100536430 /* LaunchScreen.storyboard */,
 				6D07D71328B945C900CA840F /* SummaryModule */,
 				6DCDA23428B58BAC0028B849 /* TabbarModule */,

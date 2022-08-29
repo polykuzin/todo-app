@@ -45,7 +45,7 @@ struct AddView: View {
 //            .frame(maxHeight: .infinity)
             .padding(14)
         }
-        .navigationTitle("Add an Item 🖊")
+        .navigationTitle("Add an Item")
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
         .alert(isPresented: $showAlert, content: getAlert)

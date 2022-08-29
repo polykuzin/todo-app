@@ -21,7 +21,12 @@ struct TabbarView : View {
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: Alignment.bottom) {
-                NavigationLink(destination: AddView(), tag: 1, selection: $action) {
+                NavigationLink(
+                    destination: AddView()
+                        .environmentObject(SummaryViewModel())
+                        .onAppear(perform: UIApplication.shared.addTapGestureRecognizer),
+                    tag: 1,
+                    selection: $action) {
                     EmptyView()
                 }
                 TabView(selection: $selectedTab) {
@@ -40,6 +45,7 @@ struct TabbarView : View {
                             itemWidth: geometry.size.width / 2,
                             onTap: {
                                 self.action = 1
+                                selectedTab = .summary
                             }
                         )
                         TabbarItem(

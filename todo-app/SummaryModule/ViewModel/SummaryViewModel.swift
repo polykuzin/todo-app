@@ -46,6 +46,7 @@ class SummaryViewModel : ObservableObject {
         catch {
             fatalError("❌ Failed to update Task: \(error.localizedDescription)")
         }
+        self.getItems()
     }
     
     func saveItems() {
