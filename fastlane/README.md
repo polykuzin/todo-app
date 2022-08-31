@@ -15,6 +15,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
+### ios deploy_to_appstore
+
+```sh
+[bundle exec] fastlane ios deploy_to_appstore
+```
+
+
+
 ### ios clean
 
 ```sh
@@ -35,6 +43,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ```sh
 [bundle exec] fastlane ios build
+```
+
+
+
+### ios deploy_to_tf
+
+```sh
+[bundle exec] fastlane ios deploy_to_tf
 ```
 
 

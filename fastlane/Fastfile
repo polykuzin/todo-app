@@ -43,7 +43,6 @@ platform :ios do
         )
     end
 
-    # TODO: Нужно в зависимости от среды собирать сборку в определённую группу
     lane :build do |scheme|
         environment = scheme[:environment]
         keychain_name = TEMP_KEYCHAIN_USER
@@ -130,6 +129,16 @@ platform :ios do
                     DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
                 }
             }
+        )
+        
+        upload_to_testflight(
+            apple_id: "#{DEVELOPER_APP_ID}",
+            app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+            skip_waiting_for_build_processing: true,
+            skip_submission: true,
+            distribute_external: false,
+            notify_external_testers: false,
+            ipa: "./todo-app.ipa"
         )
     end
 
