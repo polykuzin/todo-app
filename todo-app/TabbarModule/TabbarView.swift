@@ -4,7 +4,7 @@
 //
 //  Created by polykuzin on 24/08/2022.
 //
-
+// swiftlint:disable all
 import SwiftUI
 
 struct TabbarView : View {
@@ -14,6 +14,9 @@ struct TabbarView : View {
     
     @State
     private var selectedTab : TabbarType = .summary
+    
+    @StateObject
+    var viewModel = SummaryViewModel()
     
     @EnvironmentObject
     var listViewModel : SummaryViewModel
@@ -30,9 +33,9 @@ struct TabbarView : View {
                     EmptyView()
                 }
                 TabView(selection: $selectedTab) {
-                    add.tag(TabbarType.add)
+                    // add.tag(TabbarType.summary)
                     summary.tag(TabbarType.summary)
-                    //                    settings.tag(TabbarType.settings)
+                    // settings.tag(TabbarType.settings)
                 }
                 VStack(spacing: 16) {
                     Rectangle()
@@ -63,15 +66,9 @@ struct TabbarView : View {
         .ignoresSafeArea(.keyboard)
     }
     
-    public var add : some View {
-        AddView()
-            .environmentObject(SummaryViewModel())
-            .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
-    }
-    
     private var summary : some View {
         SummaryView()
-            .environmentObject(SummaryViewModel())
+            .environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
     }
 }
 

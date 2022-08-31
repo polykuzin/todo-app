@@ -9,39 +9,37 @@ import SwiftUI
 
 struct SummaryView : View {
     
-    @EnvironmentObject
-    var listViewModel: SummaryViewModel
+    @ObservedObject
+    var viewModel : SummaryViewModel = SummaryViewModel()
+    
+    @Environment(\.managedObjectContext)
+    var context
     
     var body: some View {
         ZStack {
-            if listViewModel.items.isEmpty {
+            if viewModel.items.isEmpty {
                 EmptyView()
                     .transition(AnyTransition.opacity.animation(.easeIn))
             } else {
                 List {
-                    ForEach(listViewModel.items) { item in
+                    ForEach(viewModel.items, id: \.self) { item in
                         SummaryRowView(item: item)
                             .onTapGesture {
                                 withAnimation(.linear) {
-                                    listViewModel.updateItem(item: item)
+                                    viewModel.updateItem(item: item)
                                 }
                             }
                     }
-                    .onDelete(perform: listViewModel.deleteItem)
-                    .onMove(perform: listViewModel.moveItem)
+                    // .onDelete {
+                    //      deleteMovie($0)
+                    // }
+                    // .onMove(perform: viewModel.moveItem)
                 }
                 .listStyle(PlainListStyle())
             }
         }
-    }
-}
-
-struct ListView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            SummaryView()
+        .onAppear{
+            viewModel.items = viewModel.getItems()
         }
-        .environmentObject(SummaryViewModel())
-        .previewDevice("iPhone 13 Pro Max")
     }
 }

@@ -82,16 +82,4 @@ class TaskModelContainer {
             print("❌❌❌ Failed to create Task: \(error.localizedDescription)")
         }
     }
-    
-    public func fetch() -> [TaskModel] {
-        let fetchRequest = NSFetchRequest<TaskModel>(entityName: "TaskModel")
-        do {
-            return try context.fetch(fetchRequest)
-        } catch {
-#if dev
-            fatalError("❌❌❌ Failed to fetch Task: \(error)")
-#endif
-        }
-        return []
-    }
 }
