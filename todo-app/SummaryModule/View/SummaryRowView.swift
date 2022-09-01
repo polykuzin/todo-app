@@ -13,7 +13,7 @@ struct SummaryRowView : View {
     
     var body: some View {
         HStack {
-            Image(systemName: item.isCompleted ? "checkmark.circle" : "circle")
+            Image(systemName: item.isCompleted ? "checkmark.square" : "square")
                 .foregroundColor(.appColor)
             Text(item.title)
             Spacer()

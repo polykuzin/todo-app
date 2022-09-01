@@ -12,21 +12,42 @@ import CoreData
 class SummaryViewModel : ObservableObject {
     
     @Published
-    public var items: [TaskModel] = []
+    public var items: [TaskModel] = [] {
+        didSet {
+            print(items)
+//            saveItems()
+        }
+    }
     
     public init() {
-        getItems()
+        items = getItems()
     }
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    func getItems() {
-        self.items = TaskModelContainer.shared.fetch()
+    func getItems() -> [TaskModel] {
+        let fetchRequest = NSFetchRequest<TaskModel>(entityName: "TaskModel")
+        do {
+            return try context.fetch(fetchRequest)
+        } catch {
+#if dev
+            fatalError("❌❌❌ Failed to fetch Task: \(error)")
+#endif
+        }
+        return []
     }
     
-    func deleteItem(indexSet: IndexSet) {
-        items.remove(atOffsets: indexSet)
-//        CoreDataManager(modelName: "TaskModel").managedObjectContext.delete(items[Int(indexSet)])
+    func deleteItem(_ item: TaskModel) {
+        if let index = items.firstIndex(where: { $0.id == item.id }) {
+            do {
+                let item = items[index]
+                items.remove(at: index)
+                context.delete(item)
+                try context.save()
+            } catch {
+                print(error)
+            }
+        }
     }
     
     func moveItem(from: IndexSet, to: Int) {
@@ -35,23 +56,39 @@ class SummaryViewModel : ObservableObject {
     
     func addItem(title: String) {
         TaskModelContainer.shared.createTask(title: title)
-        self.getItems()
+        items = getItems()
     }
     
     func updateItem(item: TaskModel) {
-        item.isCompleted.toggle()
+        if let index = items.firstIndex(where: { $0.id == item.id }) {
+            do {
+                guard
+                    let task = NSEntityDescription.insertNewObject(forEntityName: "TaskModel", into: context) as? TaskModel
+                else { fatalError() }
+                
+                task.id = items[index].id
+                task.title = items[index].title
+                task.isCompleted = !items[index].isCompleted
+                let item = items[index]
+                items.remove(at: index)
+                context.delete(item)
+                items.insert(task, at: index)
+                try context.save()
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func saveItems() {
         do {
             try context.save()
         }
         catch {
             fatalError("❌ Failed to update Task: \(error.localizedDescription)")
         }
-        self.getItems()
-    }
-    
-    func saveItems() {
-//        if let encodedData = try? JSONEncoder().encode(items) {
-//            UserDefaults.standard.set(encodedData, forKey: itemsKey)
-//        }
+        // if let encodedData = try? JSONEncoder().encode(items) {
+        // UserDefaults.standard.set(encodedData, forKey: itemsKey)
+        // }
     }
 }
