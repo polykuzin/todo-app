@@ -37,8 +37,17 @@ class SummaryViewModel : ObservableObject {
         return []
     }
     
-    func deleteItem(indexSet: IndexSet) {
-        items.remove(atOffsets: indexSet)
+    func deleteItem(_ item: TaskModel) {
+        if let index = items.firstIndex(where: { $0.id == item.id }) {
+            do {
+                let item = items[index]
+                items.remove(at: index)
+                context.delete(item)
+                try context.save()
+            } catch {
+                print(error)
+            }
+        }
     }
     
     func moveItem(from: IndexSet, to: Int) {
@@ -62,7 +71,7 @@ class SummaryViewModel : ObservableObject {
                 task.isCompleted = !items[index].isCompleted
                 let item = items[index]
                 items.remove(at: index)
-                try context.delete(item)
+                context.delete(item)
                 items.insert(task, at: index)
                 try context.save()
             } catch {

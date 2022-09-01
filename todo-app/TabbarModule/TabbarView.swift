@@ -76,6 +76,6 @@ struct TabbarView_Previews : PreviewProvider {
     
     static var previews : some View {
         TabbarView()
-            .previewDevice("iPhone 13 Pro Max")
+            .previewDevice("iPhone 8")
     }
 }

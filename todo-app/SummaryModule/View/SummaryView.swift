@@ -29,11 +29,14 @@ struct SummaryView : View {
                                     viewModel.updateItem(item: item)
                                 }
                             }
+                            .contextMenu {
+                                Group {
+                                    Button("delete") {
+                                        viewModel.deleteItem(item)
+                                    }
+                                }
+                            }
                     }
-                    // .onDelete {
-                    //      deleteMovie($0)
-                    // }
-                    // .onMove(perform: viewModel.moveItem)
                 }
                 .listStyle(PlainListStyle())
             }
