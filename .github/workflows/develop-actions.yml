@@ -1,5 +1,9 @@
 name: develop actions
 on:
+    push:
+        branches:
+        - 'develop'
+        - 'release/**-alpha'
     pull_request:
         types: [closed]
         branches:
