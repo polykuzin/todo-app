@@ -17,7 +17,6 @@ extension TaskModel {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<TaskModel> {
         return NSFetchRequest<TaskModel>(entityName: "TaskModel")
     }
-
 }
 
 extension TaskModel : Identifiable { }

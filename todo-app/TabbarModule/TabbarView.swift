@@ -10,7 +10,7 @@ import SwiftUI
 struct TabbarView : View {
     
     @State
-    private var action: Int? = 0
+    private var action : Int? = 0
     
     @State
     private var selectedTab : TabbarType = .summary
@@ -33,9 +33,7 @@ struct TabbarView : View {
                     EmptyView()
                 }
                 TabView(selection: $selectedTab) {
-                    // add.tag(TabbarType.summary)
                     summary.tag(TabbarType.summary)
-                    // settings.tag(TabbarType.settings)
                 }
                 VStack(spacing: 16) {
                     Rectangle()
@@ -44,18 +42,18 @@ struct TabbarView : View {
                     HStack(spacing: 0) {
                         TabbarItem(
                             image: Image(systemName: "plus"),
+                            width: geometry.size.width / 2,
                             selected: selectedTab ==  .add,
-                            itemWidth: geometry.size.width / 2,
-                            onTap: {
+                            onSelect: {
                                 self.action = 1
                                 selectedTab = .summary
                             }
                         )
                         TabbarItem(
                             image: Image(systemName: "list.bullet"),
+                            width: geometry.size.width / 2,
                             selected: selectedTab == .summary,
-                            itemWidth: geometry.size.width / 2,
-                            onTap: {
+                            onSelect: {
                                 selectedTab = .summary
                             }
                         )
@@ -77,5 +75,7 @@ struct TabbarView_Previews : PreviewProvider {
     static var previews : some View {
         TabbarView()
             .previewDevice("iPhone 8")
+        TabbarView()
+            .previewDevice("iPhone 13")
     }
 }

@@ -21,22 +21,30 @@ APPLE_KEY_CONTENT = ENV["APPLE_KEY_CONTENT"]
 # (там хранятся сертификаты и профайлы)
 GIT_AUTHORIZATION = ENV["GIT_AUTHORIZATION"]
 
+# Чтобы сохранить сертификаты от Connect мы
+# должны создать временную KeyChain - тут имя
 TEMP_KEYCHAIN_USER = ENV["TEMP_KEYCHAIN_USER"]
 
+# Чтобы сохранить сертификаты от Connect мы
+# должны создать временную KeyChain - тут пароль
 TEMP_KEYCHAIN_PASSWORD = ENV["TEMP_KEYCHAIN_PASSWORD"]
 
+# Просто Bundle Id прилки, чтобы всё чики-пони прошло
 DEVELOPER_APP_IDENTIFIER = ENV["DEVELOPER_APP_IDENTIFIER"]
 
+# Название провижена, чтобы он подставился в нужное место (автоматом)
 PROVISIONING_PROFILE_SPECIFIER = ENV["PROVISIONING_PROFILE_SPECIFIER"]
 
 platform :ios do
-
+    
+    # Чистим - больше для локальных нужд
     lane :clean do
         xcclean
         clear_derived_data
         clean_build_artifacts
     end
-  
+    
+    # Линтовка - чтобы мы не забывали писать чисто =)
     lane :lint_code do
         swiftlint(
             mode: :lint, # SwiftLint mode: :lint (default) or :autocorrect
@@ -48,7 +56,8 @@ platform :ios do
             strict: true # Fail on warnings? (Default: false)
         )
     end
-
+    
+    # Билдим, в зависимости от того, какая схема нужна
     lane :build do |scheme|
         environment = scheme[:environment]
         keychain_name = TEMP_KEYCHAIN_USER
@@ -93,7 +102,6 @@ platform :ios do
         )
     end
     
-    # TODO: Нужно в зависимости от среды собирать сборку в определённую группу
     lane :deploy_to_tf do |scheme|
         environment = scheme[:environment]
         keychain_name = TEMP_KEYCHAIN_USER

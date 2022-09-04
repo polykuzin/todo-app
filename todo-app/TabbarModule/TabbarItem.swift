@@ -10,13 +10,13 @@ import SwiftUI
 struct TabbarItem : View {
     
     let image : Image
+    let width : CGFloat
     let selected : Bool
-    let itemWidth : CGFloat
-    let onTap : (() -> Void)
+    let onSelect : (() -> Void)
     
     var body: some View {
         Button {
-            onTap()
+            onSelect()
         } label: {
             VStack(alignment: .center, spacing: 2.0) {
                 ZStack(alignment: .bottomLeading) {
@@ -38,7 +38,7 @@ struct TabbarItem : View {
                 Text("")
                     .font(.caption)
             }
-            .frame(width: itemWidth)
+            .frame(width: width)
         }
         .buttonStyle(.plain)
     }
@@ -48,12 +48,10 @@ struct TabbarItem_Previews : PreviewProvider {
     
     static var previews : some View {
         TabbarItem(
-            image: Image(systemName: "plus"),
+            image: .plus,
+            width: 50,
             selected: true,
-            itemWidth: 50,
-            onTap: {
-                
-            }
+            onSelect: { }
         )
     }
 }

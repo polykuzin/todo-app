@@ -42,7 +42,6 @@ struct AddView: View {
                     .background(Color(UIColor.secondarySystemBackground))
                     .cornerRadius(10)
             }
-//            .frame(maxHeight: .infinity)
             .padding(14)
         }
         .navigationTitle("Add an Item")

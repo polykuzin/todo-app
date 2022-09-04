@@ -11,17 +11,12 @@ import CoreData
 
 class SummaryViewModel : ObservableObject {
     
-    @Published
-    public var items: [TaskModel] = [] {
-        didSet {
-            print(items)
-//            saveItems()
-        }
-    }
-    
     public init() {
         items = getItems()
     }
+    
+    @Published
+    public var items = [TaskModel]()
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -30,11 +25,8 @@ class SummaryViewModel : ObservableObject {
         do {
             return try context.fetch(fetchRequest)
         } catch {
-#if dev
             fatalError("❌❌❌ Failed to fetch Task: \(error)")
-#endif
         }
-        return []
     }
     
     func deleteItem(_ item: TaskModel) {
@@ -87,8 +79,5 @@ class SummaryViewModel : ObservableObject {
         catch {
             fatalError("❌ Failed to update Task: \(error.localizedDescription)")
         }
-        // if let encodedData = try? JSONEncoder().encode(items) {
-        // UserDefaults.standard.set(encodedData, forKey: itemsKey)
-        // }
     }
 }
