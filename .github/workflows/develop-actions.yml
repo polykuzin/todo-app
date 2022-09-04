@@ -1,20 +1,15 @@
 name: develop actions
 on:
-    push:
-        branches:
-        - 'develop'
-        - 'release/**-alpha'
     pull_request:
         types: [closed]
         branches:
         - 'develop'
         - 'release/**-alpha'
-
 jobs:
     prepare:
         name: Prepare
         runs-on: macOS-latest
-        environment: default
+        
         steps:
             - name: Checkout repository
               uses: actions/checkout@v3
@@ -33,7 +28,6 @@ jobs:
         name: Building
         needs: prepare
         runs-on: macOS-latest
-        environment: default
         
         steps:
             - name: Checkout repository
@@ -44,19 +38,51 @@ jobs:
               with:
                 lane: 'build'
                 options: '{ "environment": "test" }'
+              env:
+                APPLE_KEY_ID: '${{ secrets.APPLE_KEY_ID }}'
+                MATCH_PASSWORD: '${{ secrets.MATCH_PASSWORD }}'
+                APPLE_ISSUER_ID: '${{ secrets.APPLE_ISSUER_ID }}'
+                DEVELOPER_APP_ID: '${{ secrets.DEVELOPER_APP_ID }}'
+                APPLE_KEY_CONTENT: '${{ secrets.APPLE_KEY_CONTENT }}'
+                FASTLANE_APPLE_ID: '${{ secrets.FASTLANE_APPLE_ID }}'
+                GIT_AUTHORIZATION: '${{ secrets.GIT_AUTHORIZATION }}'
+                TEMP_KEYCHAIN_USER: '${{ secrets.TEMP_KEYCHAIN_USER }}'
+                TEMP_KEYCHAIN_PASSWORD: '${{ secrets.TEMP_KEYCHAIN_PASSWORD }}'
+                DEVELOPER_APP_IDENTIFIER: '${{ secrets.DEVELOPER_APP_IDENTIFIER }}'
+                DEVELOPER_PORTAL_TEAM_ID: '${{ secrets.DEVELOPER_PORTAL_TEAM_ID }}'
+                APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
+                PROVISIONING_PROFILE_SPECIFIER: '${{ secrets.PROVISIONING_PROFILE_SPECIFIER }}'
+                FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: '${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}'
 
     testflight:
         name: Building
-        needs: prepare
+        needs: [prepare, building]
         runs-on: macOS-latest
-        environment: default
         
         steps:
             - name: Checkout repository
               uses: actions/checkout@v3
+              
+            - uses: actions/download-artifact@develop
+              with:
+                name: todo-app.ipa
             
             - name: Deplying to testflight
               uses: maierj/fastlane-action@v2.2.0
               with:
                 lane: 'deploy_to_tf'
-                options: '{ "environment": "test" }'
+              env:
+                APPLE_KEY_ID: '${{ secrets.APPLE_KEY_ID }}'
+                MATCH_PASSWORD: '${{ secrets.MATCH_PASSWORD }}'
+                APPLE_ISSUER_ID: '${{ secrets.APPLE_ISSUER_ID }}'
+                DEVELOPER_APP_ID: '${{ secrets.DEVELOPER_APP_ID }}'
+                APPLE_KEY_CONTENT: '${{ secrets.APPLE_KEY_CONTENT }}'
+                FASTLANE_APPLE_ID: '${{ secrets.FASTLANE_APPLE_ID }}'
+                GIT_AUTHORIZATION: '${{ secrets.GIT_AUTHORIZATION }}'
+                TEMP_KEYCHAIN_USER: '${{ secrets.TEMP_KEYCHAIN_USER }}'
+                TEMP_KEYCHAIN_PASSWORD: '${{ secrets.TEMP_KEYCHAIN_PASSWORD }}'
+                DEVELOPER_APP_IDENTIFIER: '${{ secrets.DEVELOPER_APP_IDENTIFIER }}'
+                DEVELOPER_PORTAL_TEAM_ID: '${{ secrets.DEVELOPER_PORTAL_TEAM_ID }}'
+                APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
+                PROVISIONING_PROFILE_SPECIFIER: '${{ secrets.PROVISIONING_PROFILE_SPECIFIER }}'
+                FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: '${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}'
