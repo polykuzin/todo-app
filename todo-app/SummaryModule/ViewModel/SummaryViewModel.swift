@@ -18,7 +18,12 @@ class SummaryViewModel : ObservableObject {
     @Published
     public var items = [TaskModel]()
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private var context : NSManagedObjectContext = {
+        guard
+            let delegate = UIApplication.shared.delegate as? AppDelegate
+        else { fatalError() }
+        return delegate.persistentContainer.viewContext
+    }()
     
     func getItems() -> [TaskModel] {
         let fetchRequest = NSFetchRequest<TaskModel>(entityName: "TaskModel")
@@ -38,6 +43,20 @@ class SummaryViewModel : ObservableObject {
                 try context.save()
             } catch {
                 print(error)
+            }
+        }
+    }
+    
+    func deleteAllItems() {
+        for item in items {
+            if let index = items.firstIndex(where: { $0.id == item.id }) {
+                items.remove(at: index)
+                context.delete(item)
+            }
+            do {
+                try context.save()
+            } catch {
+                
             }
         }
     }

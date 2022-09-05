@@ -1,5 +1,5 @@
 //
-//  SummaryRowView.swift
+//  SummaryRow.swift
 //  todo-app
 //
 //  Created by polykuzin on 26/08/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SummaryRowView : View {
+struct SummaryRow : View {
     
     public let item : TaskModel!
     
