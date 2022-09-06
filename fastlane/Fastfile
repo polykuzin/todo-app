@@ -113,6 +113,16 @@ platform :ios do
             ipa: "./todo-app.ipa"
         )
     end
+    
+    lane :deploy_to_as do |scheme|
+        build(environment: "prod")
+        deliver(
+            force: false,
+            submit_for_review: false,
+            metadata_path: "./metadata",
+            skip_screenshots: true,
+        )
+    end
 
     after_all do |lane, options|
         delete_temp_keychain("todo-keychain")
