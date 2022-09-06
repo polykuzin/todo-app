@@ -53,7 +53,7 @@ jobs:
                 FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: '${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}'
                 
     deploying:
-        name: Building
+        name: Deploying
         needs: building
         runs-on: macOS-latest
         
@@ -64,7 +64,7 @@ jobs:
             - name: Building the project
               uses: maierj/fastlane-action@v2.2.0
               with:
-                lane: 'build'
+                lane: 'deploy_to_as'
                 options: '{ "environment": "dev" }'
               env:
                 APPLE_KEY_ID: '${{ secrets.APPLE_KEY_ID }}'
