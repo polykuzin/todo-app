@@ -6,3 +6,5 @@
 //
 
 APP_ICON = appIcon_prod
+
+YANDEX_API_KEY = d7ef8e0a-eacc-4479-b155-efc3031cfdcc

@@ -121,7 +121,7 @@ platform :ios do
     end
     
     lane :deploy_to_as do
-#        build(environment: "prod")
+        build(environment: "prod")
         deliver(
             force: false,
             team_id: DEVELOPER_PORTAL_TEAM_ID,
