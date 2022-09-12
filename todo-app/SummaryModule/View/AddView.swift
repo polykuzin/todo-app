@@ -24,13 +24,13 @@ struct AddView: View {
     
     var btnBack : some View { Button(action: {
         self.presentationMode.wrappedValue.dismiss()
-        }) {
-            HStack {
+    }) {
+        HStack {
             Image(systemName: "arrow.left")
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(.appColor)
-            }
         }
+    }
     }
     
     var body: some View {
@@ -48,16 +48,21 @@ struct AddView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: btnBack)
         .alert(isPresented: $showAlert, content: getAlert)
-        .overlay(Button(action: saveButtonPressed, label: {
-            Text("Save".uppercased())
-                .foregroundColor(.white)
-                .font(.headline)
-                .frame(height: 55)
-                .frame(maxWidth: .infinity)
-                .background(Color.accentColor)
-                .cornerRadius(10)
-                .padding()
-        }), alignment: .bottom)
+        .overlay(
+            Button(
+                action: saveButtonPressed,
+                label: {
+                    Text("Save".uppercased())
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.accentColor)
+                        .cornerRadius(10)
+                        .padding()
+                }
+            ), alignment: .bottom
+        ).ignoresSafeArea(.keyboard)
     }
     
     func saveButtonPressed() {
@@ -97,6 +102,6 @@ struct AddView_Previews: PreviewProvider {
             
         }
         .previewDevice("iPhone 13 Pro Max")
-
+        
     }
 }

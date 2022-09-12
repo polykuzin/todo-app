@@ -16,30 +16,74 @@ struct SummaryView : View {
     var context
     
     var body: some View {
-        ZStack {
-            if viewModel.items.isEmpty {
-                EmptyView()
-                    .transition(AnyTransition.opacity.animation(.easeIn))
-            } else {
-                List {
-                    ForEach(viewModel.items, id: \.self) { item in
-                        SummaryRowView(item: item)
-                            .onTapGesture {
-                                withAnimation(.linear) {
-                                    viewModel.updateItem(item: item)
-                                }
-                            }
-                            .contextMenu {
-                                Group {
-                                    Button("delete") {
-                                        viewModel.deleteItem(item)
+        NavigationView {
+            ZStack {
+                if viewModel.items.isEmpty {
+                    EmptyView()
+                        .transition(AnyTransition.opacity.animation(.easeIn))
+                } else {
+                    List {
+//                        VStack {
+                            ForEach(viewModel.items, id: \.self) { item in
+                                SummaryRow(item: item)
+//                                    .padding(.horizontal, 16)
+                                    .onTapGesture {
+                                        withAnimation(.linear) {
+                                            viewModel.updateItem(item: item)
+                                        }
                                     }
-                                }
+                                    .contextMenu {
+                                        Group {
+                                            Button("delete") {
+                                                viewModel.deleteItem(item)
+                                            }
+                                        }
+                                    }
                             }
+//                        }
                     }
+                    .listStyle(.plain)
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity,
+                        alignment: .topLeading
+                    )
                 }
-                .listStyle(PlainListStyle())
             }
+            .navigationBarItems(
+                leading: Text("Inbox")
+                    .font(.title)
+                    .foregroundColor(.textPrimary)
+            )
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(
+                trailing: Menu {
+                    Button {
+                        viewModel.deleteAllItems()
+                    } label: {
+                        Text("delete all")
+                            .foregroundColor(.red)
+                    }
+                } label: {
+                        Image(systemName: "ellipsis")
+                            .foregroundColor(.textPrimary)
+                    }
+//                    Button(action: {
+//                    Group {
+//                        Button {
+//                            viewModel.deleteAllItems()
+//                        } label: {
+//                            Text("delete all")
+//                                .font(.caption)
+//                                .foregroundColor(.red)
+//                        }
+//
+//                    }
+//                }, label: {
+//                    Image(systemName: "ellipsis")
+//                        .foregroundColor(.textPrimary)
+//                })
+            )
         }
         .onAppear{
             viewModel.items = viewModel.getItems()

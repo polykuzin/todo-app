@@ -4,8 +4,9 @@
 //
 //  Created by polykuzin on 24/08/2022.
 //
-// swiftlint:disable all
+
 import SwiftUI
+import CoreData
 
 struct TabbarView : View {
     
@@ -21,6 +22,13 @@ struct TabbarView : View {
     @EnvironmentObject
     var listViewModel : SummaryViewModel
     
+    private var context : NSManagedObjectContext = {
+        guard
+            let delegate = UIApplication.shared.delegate as? AppDelegate
+        else { fatalError() }
+        return delegate.persistentContainer.viewContext
+    }()
+    
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: Alignment.bottom) {
@@ -29,7 +37,8 @@ struct TabbarView : View {
                         .environmentObject(SummaryViewModel())
                         .onAppear(perform: UIApplication.shared.addTapGestureRecognizer),
                     tag: 1,
-                    selection: $action) {
+                    selection: $action
+                ) {
                     EmptyView()
                 }
                 TabView(selection: $selectedTab) {
@@ -66,16 +75,6 @@ struct TabbarView : View {
     
     private var summary : some View {
         SummaryView()
-            .environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
-    }
-}
-
-struct TabbarView_Previews : PreviewProvider {
-    
-    static var previews : some View {
-        TabbarView()
-            .previewDevice("iPhone 8")
-        TabbarView()
-            .previewDevice("iPhone 13")
+            .environment(\.managedObjectContext, context)
     }
 }
