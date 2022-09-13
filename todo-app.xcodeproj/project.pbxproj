@@ -26,6 +26,13 @@
 		6D8A71B228C4028B00682F04 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8A71B128C4028B00682F04 /* AppImages.swift */; };
 		6DA29C0A28CF4BE400B0DFE7 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 6DA29C0928CF4BE400B0DFE7 /* Core */; };
 		6DA29C0C28CF4BE800B0DFE7 /* CoreCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = 6DA29C0B28CF4BE800B0DFE7 /* CoreCoordinator */; };
+		6DA29C0E28D0B65C00B0DFE7 /* Ext+ECommerceAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA29C0D28D0B65C00B0DFE7 /* Ext+ECommerceAmount.swift */; };
+		6DA29C1128D0CABF00B0DFE7 /* Ext+ECommerceOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA29C1028D0CABF00B0DFE7 /* Ext+ECommerceOrder.swift */; };
+		6DA29C1328D0CBA800B0DFE7 /* Ext+ECommerceCartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA29C1228D0CBA800B0DFE7 /* Ext+ECommerceCartItem.swift */; };
+		6DA29C1528D0CBF500B0DFE7 /* Ext+ECommerceReferrer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA29C1428D0CBF500B0DFE7 /* Ext+ECommerceReferrer.swift */; };
+		6DA29C1728D0CC2300B0DFE7 /* Ext+ECommerceScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA29C1628D0CC2300B0DFE7 /* Ext+ECommerceScreen.swift */; };
+		6DA29C1928D0CC4F00B0DFE7 /* Ext+ECommerceProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA29C1828D0CC4F00B0DFE7 /* Ext+ECommerceProduct.swift */; };
+		6DA29C1B28D0CCC200B0DFE7 /* Ext+ECommercePrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA29C1A28D0CCC200B0DFE7 /* Ext+ECommercePrice.swift */; };
 		6DA610D928CB9F0700830E12 /* YandexAnalyticsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA610D828CB9F0700830E12 /* YandexAnalyticsEngine.swift */; };
 		6DA610E028CBA27100830E12 /* YandexMobileMetrica in Frameworks */ = {isa = PBXBuildFile; productRef = 6DA610DF28CBA27100830E12 /* YandexMobileMetrica */; };
 		6DA610E228CBA27100830E12 /* YandexMobileMetricaCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = 6DA610E128CBA27100830E12 /* YandexMobileMetricaCrashes */; };
@@ -69,6 +76,13 @@
 		6D64E61C28C8D31500455C62 /* CoreAnalytics */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreAnalytics; sourceTree = "<group>"; };
 		6D86FE4228BFAD32004B3242 /* Ext+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Collection.swift"; sourceTree = "<group>"; };
 		6D8A71B128C4028B00682F04 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
+		6DA29C0D28D0B65C00B0DFE7 /* Ext+ECommerceAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+ECommerceAmount.swift"; sourceTree = "<group>"; };
+		6DA29C1028D0CABF00B0DFE7 /* Ext+ECommerceOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+ECommerceOrder.swift"; sourceTree = "<group>"; };
+		6DA29C1228D0CBA800B0DFE7 /* Ext+ECommerceCartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+ECommerceCartItem.swift"; sourceTree = "<group>"; };
+		6DA29C1428D0CBF500B0DFE7 /* Ext+ECommerceReferrer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+ECommerceReferrer.swift"; sourceTree = "<group>"; };
+		6DA29C1628D0CC2300B0DFE7 /* Ext+ECommerceScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+ECommerceScreen.swift"; sourceTree = "<group>"; };
+		6DA29C1828D0CC4F00B0DFE7 /* Ext+ECommerceProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+ECommerceProduct.swift"; sourceTree = "<group>"; };
+		6DA29C1A28D0CCC200B0DFE7 /* Ext+ECommercePrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+ECommercePrice.swift"; sourceTree = "<group>"; };
 		6DA610D828CB9F0700830E12 /* YandexAnalyticsEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YandexAnalyticsEngine.swift; sourceTree = "<group>"; };
 		6DA610E328CBA3B500830E12 /* CoreSceneModule */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreSceneModule; sourceTree = "<group>"; };
 		6DA610E428CBA42E00830E12 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
@@ -179,9 +193,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6DA29C0F28D0CA3A00B0DFE7 /* CA_Ext+Yandex */ = {
+			isa = PBXGroup;
+			children = (
+				6DA29C0D28D0B65C00B0DFE7 /* Ext+ECommerceAmount.swift */,
+				6DA29C1228D0CBA800B0DFE7 /* Ext+ECommerceCartItem.swift */,
+				6DA29C1028D0CABF00B0DFE7 /* Ext+ECommerceOrder.swift */,
+				6DA29C1A28D0CCC200B0DFE7 /* Ext+ECommercePrice.swift */,
+				6DA29C1828D0CC4F00B0DFE7 /* Ext+ECommerceProduct.swift */,
+				6DA29C1428D0CBF500B0DFE7 /* Ext+ECommerceReferrer.swift */,
+				6DA29C1628D0CC2300B0DFE7 /* Ext+ECommerceScreen.swift */,
+			);
+			path = "CA_Ext+Yandex";
+			sourceTree = "<group>";
+		};
 		6DA610D728CB9ED800830E12 /* _Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				6DA29C0F28D0CA3A00B0DFE7 /* CA_Ext+Yandex */,
 				6DA610D828CB9F0700830E12 /* YandexAnalyticsEngine.swift */,
 			);
 			path = _Analytics;
@@ -411,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D1C632428BD1E2E0070F482 /* Ext+UIApplication.swift in Sources */,
+				6DA29C1728D0CC2300B0DFE7 /* Ext+ECommerceScreen.swift in Sources */,
 				6D1C632028BCFE0E0070F482 /* TaskModel+CoreDataClass.swift in Sources */,
 				6DAB195D28AD531000536430 /* AppDelegate.swift in Sources */,
 				6D86FE4328BFAD32004B3242 /* Ext+Collection.swift in Sources */,
@@ -419,14 +449,20 @@
 				6DCDA23C28B591270028B849 /* AppColors.swift in Sources */,
 				6DCDA23A28B58FEB0028B849 /* TabbarItem.swift in Sources */,
 				6D1C631D28BCFD500070F482 /* TaskModel.xcdatamodeld in Sources */,
+				6DA29C1B28D0CCC200B0DFE7 /* Ext+ECommercePrice.swift in Sources */,
 				6D1C632628BD29040070F482 /* ContentView.swift in Sources */,
+				6DA29C0E28D0B65C00B0DFE7 /* Ext+ECommerceAmount.swift in Sources */,
+				6DA29C1928D0CC4F00B0DFE7 /* Ext+ECommerceProduct.swift in Sources */,
 				6D8A71B228C4028B00682F04 /* AppImages.swift in Sources */,
 				6D07D71C28B9464F00CA840F /* EmptyView.swift in Sources */,
 				6DAB195F28AD531000536430 /* SceneDelegate.swift in Sources */,
 				6D07D71F28B9467F00CA840F /* SummaryViewModel.swift in Sources */,
+				6DA29C1528D0CBF500B0DFE7 /* Ext+ECommerceReferrer.swift in Sources */,
 				6D1C632128BCFE0E0070F482 /* TaskModel+CoreDataProperties.swift in Sources */,
 				6D07D71A28B9463E00CA840F /* AddView.swift in Sources */,
+				6DA29C1128D0CABF00B0DFE7 /* Ext+ECommerceOrder.swift in Sources */,
 				6D07D71828B9462D00CA840F /* SummaryRow.swift in Sources */,
+				6DA29C1328D0CBA800B0DFE7 /* Ext+ECommerceCartItem.swift in Sources */,
 				6DCDA23828B58C0C0028B849 /* TabbarView.swift in Sources */,
 				6DCDA23628B58BCD0028B849 /* TabbarType.swift in Sources */,
 				6D07D71628B9460C00CA840F /* SummaryView.swift in Sources */,
