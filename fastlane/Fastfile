@@ -109,6 +109,7 @@ platform :ios do
     end
     
     lane :deploy_to_tf do
+        build(environment: "prod")
         upload_to_testflight(
             apple_id: "#{DEVELOPER_APP_ID}",
             app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
@@ -123,7 +124,7 @@ platform :ios do
     lane :deploy_to_as do
         build(environment: "prod")
         deliver(
-            force: false,
+            force: true,
             team_id: DEVELOPER_PORTAL_TEAM_ID,
             team_name: APP_STORE_CONNECT_TEAM_ID,
             api_key: app_store_connect_api_key(

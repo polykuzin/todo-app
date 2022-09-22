@@ -76,6 +76,9 @@
 		6D64E61C28C8D31500455C62 /* CoreAnalytics */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreAnalytics; sourceTree = "<group>"; };
 		6D86FE4228BFAD32004B3242 /* Ext+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Collection.swift"; sourceTree = "<group>"; };
 		6D8A71B128C4028B00682F04 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
+		6D9B433928DCCB7400B3AD06 /* Module_Tabbar */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Module_Tabbar; sourceTree = "<group>"; };
+		6D9B433B28DCCF6F00B3AD06 /* CoreDesign */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreDesign; sourceTree = "<group>"; };
+		6D9B433C28DCE2D200B3AD06 /* Module_Inbox */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Module_Inbox; sourceTree = "<group>"; };
 		6DA29C0D28D0B65C00B0DFE7 /* Ext+ECommerceAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+ECommerceAmount.swift"; sourceTree = "<group>"; };
 		6DA29C1028D0CABF00B0DFE7 /* Ext+ECommerceOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+ECommerceOrder.swift"; sourceTree = "<group>"; };
 		6DA29C1228D0CBA800B0DFE7 /* Ext+ECommerceCartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+ECommerceCartItem.swift"; sourceTree = "<group>"; };
@@ -178,10 +181,13 @@
 		6D64E61B28C8D31500455C62 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				6D09B03428CF492500C9EA2A /* CoreCoordinator */,
 				6DA610E428CBA42E00830E12 /* Core */,
 				6D64E61C28C8D31500455C62 /* CoreAnalytics */,
+				6D09B03428CF492500C9EA2A /* CoreCoordinator */,
+				6D9B433B28DCCF6F00B3AD06 /* CoreDesign */,
 				6DA610E328CBA3B500830E12 /* CoreSceneModule */,
+				6D9B433C28DCE2D200B3AD06 /* Module_Inbox */,
+				6D9B433928DCCB7400B3AD06 /* Module_Tabbar */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -607,7 +613,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JJC3HHT8LN;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -624,7 +630,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.polykuzin.todo-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -646,7 +652,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = appColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JJC3HHT8LN;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -663,7 +669,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.polykuzin.todo-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -742,7 +748,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = appColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JJC3HHT8LN;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -759,7 +765,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.polykuzin.todo-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -16,7 +16,9 @@ let package = Package(
     dependencies: [
         .package(path: "Core"),
         .package(path: "CoreAnalytics"),
-        .package(path: "CoreCoordinator")
+        .package(path: "CoreCoordinator"),
+        
+        .package(path: "Module_Tabbar")
     ],
     targets: [
         .target(
@@ -25,6 +27,8 @@ let package = Package(
                 .product(name: "Core", package: "Core"),
                 .product(name: "CoreAnalytics", package: "CoreAnalytics"),
                 .product(name: "CoreCoordinator", package: "CoreCoordinator"),
+                
+                .product(name: "Module_Tabbar", package: "Module_Tabbar")
             ]
         ),
         .testTarget(

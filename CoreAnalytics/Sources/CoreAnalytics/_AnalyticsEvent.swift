@@ -6,6 +6,8 @@
 //
 
 public protocol _AnalyticsEvent {
+    
     var name : String { get set }
+    
     var metadata : [String: AnyHashable]? { get set }
 }

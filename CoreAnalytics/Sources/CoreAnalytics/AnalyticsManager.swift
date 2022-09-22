@@ -8,6 +8,14 @@
 protocol _AnalyticsManager {
     
     init(engines: [_AnalyticsEngine])
+    
+    func report(_ event: _AnalyticsEvent)
+    
+    func report(_ error: _AnalyticsError)
+    
+    func report(_ revenue: _AnalyticsRevenueEvent)
+    
+    func report(_ ecommerce: ECommerceEvent)
 }
 
 public class AnalyticsManager : _AnalyticsManager {

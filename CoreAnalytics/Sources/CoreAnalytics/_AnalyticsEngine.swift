@@ -17,14 +17,21 @@ public protocol _AnalyticsEngine {
 }
 
 public protocol _AnalyticsError {
+    
     var id : String { get set }
+    
     var message : String { get set }
+    
     var metadata : [String: AnyHashable]? { get set }
 }
 
 public protocol _AnalyticsRevenueEvent {
+    
     var id : String { get set }
+    
     var price : String { get set }
+    
     var currency : String { get set }
+    
     var quantity : Int { get set }
 }

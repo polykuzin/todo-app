@@ -1,15 +1,15 @@
 //
-//  CoreSceneCoordinator.swift
+//  TabbarCoordinator.swift
 //  
 //
-//  Created by polykuzin on 09/09/2022.
+//  Created by polykuzin on 22/09/2022.
 //
 
 import UIKit
 import SwiftUI
 import CoreCoordinator
 
-public class CoreSceneCoordinator : _Coordinator {
+public class TabbarCoordinator : _Coordinator {
     
     public var children = [_Coordinator]()
     
@@ -20,7 +20,7 @@ public class CoreSceneCoordinator : _Coordinator {
     }
     
     public func startNavigationFlow() {
-        let view = CoreSplitView()
+        let view = TabbarView()
         let controller = UIHostingController(rootView: view)
         navigation.pushViewController(controller, animated: false)
     }
