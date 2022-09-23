@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import SwiftUI
 
 public protocol _Coordinator {
     
-    var children : [_Coordinator] { get set }
+//    associatedtype View: SwiftUI.View
+//    
+//    var children : [any _Coordinator] { get set }
     
-    var navigation : UINavigationController { get set }
-    
-    func startNavigationFlow() 
+//    func startNavigationFlow() -> View
 }

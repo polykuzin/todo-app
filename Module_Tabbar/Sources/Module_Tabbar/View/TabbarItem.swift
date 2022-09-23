@@ -29,9 +29,9 @@ struct TabbarItem : View {
                         Text("")
                             .kerning(0.3)
                             .lineLimit(1)
+                            .font(.caption)
                             .truncationMode(.tail)
                             .foregroundColor(Color.white)
-                            .font(.caption)
                             .padding(.horizontal, 4)
                             .offset(x: 16.0, y: -8.0)
                     }
@@ -41,18 +41,7 @@ struct TabbarItem : View {
             }
             .frame(width: width)
         }
+        .frame(maxWidth: .infinity)
         .buttonStyle(.plain)
-    }
-}
-
-struct TabbarItem_Previews : PreviewProvider {
-    
-    static var previews : some View {
-        TabbarItem(
-            image: .plus,
-            width: 50,
-            selected: true,
-            onSelect: { }
-        )
     }
 }

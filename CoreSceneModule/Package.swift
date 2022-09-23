@@ -11,7 +11,9 @@ let package = Package(
     products: [
         .library(
             name: "CoreSceneModule",
-            targets: ["CoreSceneModule"]),
+            type: .dynamic,
+            targets: ["CoreSceneModule"]
+        ),
     ],
     dependencies: [
         .package(path: "Core"),

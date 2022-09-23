@@ -10,6 +10,7 @@ import YandexMobileMetrica
 
 final class YandexAnalyticsEngine {
     
+    /// Regular init
     public init() {
         configure()
     }

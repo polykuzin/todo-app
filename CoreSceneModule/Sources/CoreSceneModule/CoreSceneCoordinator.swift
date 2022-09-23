@@ -11,17 +11,13 @@ import CoreCoordinator
 
 public class CoreSceneCoordinator : _Coordinator {
     
-    public var children = [_Coordinator]()
     
-    public var navigation : UINavigationController
+    public init() { }
     
-    public init(_ navigation: UINavigationController) {
-        self.navigation = navigation
-    }
+    public var children = [any _Coordinator]()
     
-    public func startNavigationFlow() {
+    public func startNavigationFlow() -> some View {
         let view = CoreSplitView()
-        let controller = UIHostingController(rootView: view)
-        navigation.pushViewController(controller, animated: false)
+        return view
     }
 }

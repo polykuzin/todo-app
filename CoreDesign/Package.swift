@@ -11,6 +11,7 @@ let package = Package(
     products: [
         .library(
             name: "CoreDesign",
+            type: .dynamic,
             targets: ["CoreDesign"]),
     ],
     targets: [

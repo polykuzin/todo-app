@@ -7,6 +7,5 @@
 
 enum TabbarType: Int {
     case add
-    case summary
-    case settings
+    case inbox
 }

@@ -21,7 +21,13 @@
 		6D1C632428BD1E2E0070F482 /* Ext+UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C632328BD1E2E0070F482 /* Ext+UIApplication.swift */; };
 		6D1C632628BD29040070F482 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1C632528BD29040070F482 /* ContentView.swift */; };
 		6D1C635B28BD43F10070F482 /* Deliverfile in Resources */ = {isa = PBXBuildFile; fileRef = 6D1C635A28BD43F10070F482 /* Deliverfile */; };
-		6D64E61F28CB5E1600455C62 /* CoreAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6D64E61E28CB5E1600455C62 /* CoreAnalytics */; };
+		6D39BF4628DCFDF900A6926B /* CoreDesign in Frameworks */ = {isa = PBXBuildFile; productRef = 6D39BF4528DCFDF900A6926B /* CoreDesign */; };
+		6D39BF4828DCFE0100A6926B /* Module_Tabbar in Frameworks */ = {isa = PBXBuildFile; productRef = 6D39BF4728DCFE0100A6926B /* Module_Tabbar */; };
+		6D39BF4A28DCFE0500A6926B /* Module_Inbox in Frameworks */ = {isa = PBXBuildFile; productRef = 6D39BF4928DCFE0500A6926B /* Module_Inbox */; };
+		6D39BF4C28DCFEFF00A6926B /* ApplicationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D39BF4B28DCFEFF00A6926B /* ApplicationEvents.swift */; };
+		6D39BF4E28DCFF4D00A6926B /* ApplicationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D39BF4D28DCFF4D00A6926B /* ApplicationErrors.swift */; };
+		6D39BF5A28DDE35000A6926B /* YandexMobileMetrica in Frameworks */ = {isa = PBXBuildFile; productRef = 6D39BF5928DDE35000A6926B /* YandexMobileMetrica */; };
+		6D39BF5C28DDF19D00A6926B /* BaseSplitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D39BF5B28DDF19D00A6926B /* BaseSplitController.swift */; };
 		6D86FE4328BFAD32004B3242 /* Ext+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D86FE4228BFAD32004B3242 /* Ext+Collection.swift */; };
 		6D8A71B228C4028B00682F04 /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8A71B128C4028B00682F04 /* AppImages.swift */; };
 		6DA29C0A28CF4BE400B0DFE7 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 6DA29C0928CF4BE400B0DFE7 /* Core */; };
@@ -34,8 +40,6 @@
 		6DA29C1928D0CC4F00B0DFE7 /* Ext+ECommerceProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA29C1828D0CC4F00B0DFE7 /* Ext+ECommerceProduct.swift */; };
 		6DA29C1B28D0CCC200B0DFE7 /* Ext+ECommercePrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA29C1A28D0CCC200B0DFE7 /* Ext+ECommercePrice.swift */; };
 		6DA610D928CB9F0700830E12 /* YandexAnalyticsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA610D828CB9F0700830E12 /* YandexAnalyticsEngine.swift */; };
-		6DA610E028CBA27100830E12 /* YandexMobileMetrica in Frameworks */ = {isa = PBXBuildFile; productRef = 6DA610DF28CBA27100830E12 /* YandexMobileMetrica */; };
-		6DA610E228CBA27100830E12 /* YandexMobileMetricaCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = 6DA610E128CBA27100830E12 /* YandexMobileMetricaCrashes */; };
 		6DA610EA28CBAE8300830E12 /* CoreSceneModule in Frameworks */ = {isa = PBXBuildFile; productRef = 6DA610E928CBAE8300830E12 /* CoreSceneModule */; };
 		6DAB195D28AD531000536430 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB195C28AD531000536430 /* AppDelegate.swift */; };
 		6DAB195F28AD531000536430 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAB195E28AD531000536430 /* SceneDelegate.swift */; };
@@ -55,6 +59,19 @@
 		6DCDA24F28B64CDC0028B849 /* KeyChain in Resources */ = {isa = PBXBuildFile; fileRef = 6DCDA24E28B64CDC0028B849 /* KeyChain */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6D39BF5328DDE11C00A6926B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6D07D71528B9460C00CA840F /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		6D07D71728B9462D00CA840F /* SummaryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryRow.swift; sourceTree = "<group>"; };
@@ -73,6 +90,9 @@
 		6D1C632328BD1E2E0070F482 /* Ext+UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIApplication.swift"; sourceTree = "<group>"; };
 		6D1C632528BD29040070F482 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6D1C635A28BD43F10070F482 /* Deliverfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Deliverfile; sourceTree = "<group>"; };
+		6D39BF4B28DCFEFF00A6926B /* ApplicationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationEvents.swift; sourceTree = "<group>"; };
+		6D39BF4D28DCFF4D00A6926B /* ApplicationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationErrors.swift; sourceTree = "<group>"; };
+		6D39BF5B28DDF19D00A6926B /* BaseSplitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSplitController.swift; sourceTree = "<group>"; };
 		6D64E61C28C8D31500455C62 /* CoreAnalytics */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CoreAnalytics; sourceTree = "<group>"; };
 		6D86FE4228BFAD32004B3242 /* Ext+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+Collection.swift"; sourceTree = "<group>"; };
 		6D8A71B128C4028B00682F04 /* AppImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
@@ -117,12 +137,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D39BF4628DCFDF900A6926B /* CoreDesign in Frameworks */,
 				6DA610EA28CBAE8300830E12 /* CoreSceneModule in Frameworks */,
-				6DA610E228CBA27100830E12 /* YandexMobileMetricaCrashes in Frameworks */,
+				6D39BF4A28DCFE0500A6926B /* Module_Inbox in Frameworks */,
 				6DA29C0C28CF4BE800B0DFE7 /* CoreCoordinator in Frameworks */,
-				6D64E61F28CB5E1600455C62 /* CoreAnalytics in Frameworks */,
+				6D39BF5A28DDE35000A6926B /* YandexMobileMetrica in Frameworks */,
 				6DA29C0A28CF4BE400B0DFE7 /* Core in Frameworks */,
-				6DA610E028CBA27100830E12 /* YandexMobileMetrica in Frameworks */,
+				6D39BF4828DCFE0100A6926B /* Module_Tabbar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,8 +237,10 @@
 		6DA610D728CB9ED800830E12 /* _Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				6DA29C0F28D0CA3A00B0DFE7 /* CA_Ext+Yandex */,
+				6D39BF4D28DCFF4D00A6926B /* ApplicationErrors.swift */,
+				6D39BF4B28DCFEFF00A6926B /* ApplicationEvents.swift */,
 				6DA610D828CB9F0700830E12 /* YandexAnalyticsEngine.swift */,
+				6DA29C0F28D0CA3A00B0DFE7 /* CA_Ext+Yandex */,
 			);
 			path = _Analytics;
 			sourceTree = "<group>";
@@ -248,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				6DAB195C28AD531000536430 /* AppDelegate.swift */,
+				6D39BF5B28DDF19D00A6926B /* BaseSplitController.swift */,
 				6D1C632528BD29040070F482 /* ContentView.swift */,
 				6DAB195E28AD531000536430 /* SceneDelegate.swift */,
 				6DA610D728CB9ED800830E12 /* _Analytics */,
@@ -343,6 +367,7 @@
 				6DAB195628AD531000536430 /* Frameworks */,
 				6DAB195728AD531000536430 /* Resources */,
 				6D07D72328B9494900CA840F /* ShellScript */,
+				6D39BF5328DDE11C00A6926B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -350,12 +375,13 @@
 			);
 			name = "todo-app";
 			packageProductDependencies = (
-				6D64E61E28CB5E1600455C62 /* CoreAnalytics */,
-				6DA610DF28CBA27100830E12 /* YandexMobileMetrica */,
-				6DA610E128CBA27100830E12 /* YandexMobileMetricaCrashes */,
 				6DA610E928CBAE8300830E12 /* CoreSceneModule */,
 				6DA29C0928CF4BE400B0DFE7 /* Core */,
 				6DA29C0B28CF4BE800B0DFE7 /* CoreCoordinator */,
+				6D39BF4528DCFDF900A6926B /* CoreDesign */,
+				6D39BF4728DCFE0100A6926B /* Module_Tabbar */,
+				6D39BF4928DCFE0500A6926B /* Module_Inbox */,
+				6D39BF5928DDE35000A6926B /* YandexMobileMetrica */,
 			);
 			productName = "todo-app";
 			productReference = 6DAB195928AD531000536430 /* todo-app.app */;
@@ -386,7 +412,7 @@
 			);
 			mainGroup = 6DAB195028AD531000536430;
 			packageReferences = (
-				6DA610DE28CBA27100830E12 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */,
+				6D39BF5828DDE35000A6926B /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */,
 			);
 			productRefGroup = 6DAB195A28AD531000536430 /* Products */;
 			projectDirPath = "";
@@ -452,6 +478,7 @@
 				6D86FE4328BFAD32004B3242 /* Ext+Collection.swift in Sources */,
 				6D1C631A28BCF9C50070F482 /* TaskModelContainer.swift in Sources */,
 				6DA610D928CB9F0700830E12 /* YandexAnalyticsEngine.swift in Sources */,
+				6D39BF4C28DCFEFF00A6926B /* ApplicationEvents.swift in Sources */,
 				6DCDA23C28B591270028B849 /* AppColors.swift in Sources */,
 				6DCDA23A28B58FEB0028B849 /* TabbarItem.swift in Sources */,
 				6D1C631D28BCFD500070F482 /* TaskModel.xcdatamodeld in Sources */,
@@ -460,10 +487,12 @@
 				6DA29C0E28D0B65C00B0DFE7 /* Ext+ECommerceAmount.swift in Sources */,
 				6DA29C1928D0CC4F00B0DFE7 /* Ext+ECommerceProduct.swift in Sources */,
 				6D8A71B228C4028B00682F04 /* AppImages.swift in Sources */,
+				6D39BF4E28DCFF4D00A6926B /* ApplicationErrors.swift in Sources */,
 				6D07D71C28B9464F00CA840F /* EmptyView.swift in Sources */,
 				6DAB195F28AD531000536430 /* SceneDelegate.swift in Sources */,
 				6D07D71F28B9467F00CA840F /* SummaryViewModel.swift in Sources */,
 				6DA29C1528D0CBF500B0DFE7 /* Ext+ECommerceReferrer.swift in Sources */,
+				6D39BF5C28DDF19D00A6926B /* BaseSplitController.swift in Sources */,
 				6D1C632128BCFE0E0070F482 /* TaskModel+CoreDataProperties.swift in Sources */,
 				6D07D71A28B9463E00CA840F /* AddView.swift in Sources */,
 				6DA29C1128D0CABF00B0DFE7 /* Ext+ECommerceOrder.swift in Sources */,
@@ -527,6 +556,8 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -585,6 +616,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = test;
@@ -597,6 +629,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -616,6 +649,7 @@
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JJC3HHT8LN;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "todo-app/_AppConfig/AppConfig.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = ToDo;
@@ -624,13 +658,15 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.4;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.polykuzin.todo-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -640,7 +676,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = dev;
 		};
@@ -655,6 +691,7 @@
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JJC3HHT8LN;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "todo-app/_AppConfig/AppConfig.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = ToDo;
@@ -663,13 +700,15 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.4;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.polykuzin.todo-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -680,7 +719,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = test;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = test;
 		};
@@ -721,6 +760,8 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = prod;
@@ -733,6 +774,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -751,6 +793,7 @@
 				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JJC3HHT8LN;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "todo-app/_AppConfig/AppConfig.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = ToDo;
@@ -759,13 +802,15 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.4;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.polykuzin.todo-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -776,7 +821,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = prod;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = prod;
 		};
@@ -806,20 +851,33 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6DA610DE28CBA27100830E12 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */ = {
+		6D39BF5828DDE35000A6926B /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/yandexmobile/metrica-sdk-ios";
 			requirement = {
-				kind = exactVersion;
-				version = 4.2.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6D64E61E28CB5E1600455C62 /* CoreAnalytics */ = {
+		6D39BF4528DCFDF900A6926B /* CoreDesign */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = CoreAnalytics;
+			productName = CoreDesign;
+		};
+		6D39BF4728DCFE0100A6926B /* Module_Tabbar */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Module_Tabbar;
+		};
+		6D39BF4928DCFE0500A6926B /* Module_Inbox */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Module_Inbox;
+		};
+		6D39BF5928DDE35000A6926B /* YandexMobileMetrica */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6D39BF5828DDE35000A6926B /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */;
+			productName = YandexMobileMetrica;
 		};
 		6DA29C0928CF4BE400B0DFE7 /* Core */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -828,16 +886,6 @@
 		6DA29C0B28CF4BE800B0DFE7 /* CoreCoordinator */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CoreCoordinator;
-		};
-		6DA610DF28CBA27100830E12 /* YandexMobileMetrica */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6DA610DE28CBA27100830E12 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */;
-			productName = YandexMobileMetrica;
-		};
-		6DA610E128CBA27100830E12 /* YandexMobileMetricaCrashes */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6DA610DE28CBA27100830E12 /* XCRemoteSwiftPackageReference "metrica-sdk-ios" */;
-			productName = YandexMobileMetricaCrashes;
 		};
 		6DA610E928CBAE8300830E12 /* CoreSceneModule */ = {
 			isa = XCSwiftPackageProductDependency;

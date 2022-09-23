@@ -11,17 +11,12 @@ import CoreCoordinator
 
 public class TabbarCoordinator : _Coordinator {
     
-    public var children = [_Coordinator]()
+    public init() { }
     
-    public var navigation : UINavigationController
+    public var children = [any _Coordinator]()
     
-    public init(_ navigation: UINavigationController) {
-        self.navigation = navigation
-    }
-    
-    public func startNavigationFlow() {
+    public func startNavigationFlow() -> some View {
         let view = TabbarView()
-        let controller = UIHostingController(rootView: view)
-        navigation.pushViewController(controller, animated: false)
+        return view
     }
 }

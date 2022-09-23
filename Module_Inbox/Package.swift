@@ -11,6 +11,7 @@ let package = Package(
     products: [
         .library(
             name: "Module_Inbox",
+            type: .dynamic,
             targets: ["Module_Inbox"]),
     ],
     dependencies: [

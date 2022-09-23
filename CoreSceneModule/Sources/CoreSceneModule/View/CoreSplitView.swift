@@ -6,19 +6,24 @@
 //
 
 import SwiftUI
+import Module_Tabbar
 
 struct CoreSplitView : View {
     
+    init() { }
+    
+    private var tabbarCoordinator = TabbarCoordinator()
+    
     var body : some View {
-        VStack(alignment: .center, spacing: 0) {
-            
-        }
+        tabbarCoordinator.startNavigationFlow()
+            .frame(width: .infinity, height: .infinity, alignment: .bottom)
     }
 }
 
-struct CoreSplitView_Previews : PreviewProvider {
+struct CoreSplitViewPreviews : PreviewProvider {
     
     static var previews : some View {
         CoreSplitView()
+            .previewDevice(.init(stringLiteral: "iPhone 14"))
     }
 }

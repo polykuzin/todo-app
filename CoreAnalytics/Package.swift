@@ -9,7 +9,10 @@ let package = Package(
         .iOS(.v13)
     ],
     products: [
-        .library(name: "CoreAnalytics", targets: ["CoreAnalytics"])
+        .library(
+            name: "CoreAnalytics",
+            targets: ["CoreAnalytics"]
+        )
     ],
     targets: [
         .target(
