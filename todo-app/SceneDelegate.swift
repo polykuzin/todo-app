@@ -5,6 +5,7 @@
 //  Created by polykuzin on 17/08/2022.
 //
 
+import Core
 import UIKit
 import SwiftUI
 import CoreAnalytics
@@ -29,7 +30,7 @@ class SceneDelegate : UIResponder {
             let windowScene = (scene as? UIWindowScene)
         else { return }
         let controller = BaseSplitController()
-        controller.viewControllers = [TabbarController()]
+        controller.viewControllers = [TabbarController(), UIViewController()]
         self.window = UIWindow(windowScene: windowScene)
         self.window?.rootViewController = controller
         self.window?.makeKeyAndVisible()

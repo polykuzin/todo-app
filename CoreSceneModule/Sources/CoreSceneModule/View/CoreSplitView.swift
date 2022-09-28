@@ -15,8 +15,9 @@ struct CoreSplitView : View {
     private var tabbarCoordinator = TabbarCoordinator()
     
     var body : some View {
-        tabbarCoordinator.startNavigationFlow()
-            .frame(width: .infinity, height: .infinity, alignment: .bottom)
+        Text("")
+//        tabbarCoordinator.startNavigationFlow()
+//            .frame(width: .infinity, height: .infinity, alignment: .bottom)
     }
 }
 

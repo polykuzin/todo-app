@@ -10,6 +10,18 @@ import SwiftUI
 public extension Image {
     
     static var plus : Image {
-        return Image(systemName: "plus")
+        return Image(systemName: #function)
+    }
+    
+    static var summary : Image {
+        return Image(systemName: #function)
+    }
+    
+    static var checkmark : Image {
+        return Image(systemName: #function)
+    }
+    
+    static var checkmark_complete : Image {
+        return Image(systemName: #function)
     }
 }

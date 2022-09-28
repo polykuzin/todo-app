@@ -15,8 +15,8 @@ public class TabbarCoordinator : _Coordinator {
     
     public var children = [any _Coordinator]()
     
-    public func startNavigationFlow() -> some View {
-        let view = TabbarView()
-        return view
-    }
+//    public func startNavigationFlow() -> some View {
+//        let view = TabbarView()
+//        return view
+//    }
 }

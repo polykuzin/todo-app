@@ -19,6 +19,10 @@ final public class TabbarController : UITabBarController {
         setupTabBarControllers()
         selectedIndex = 1
     }
+    
+    private var addController = UIViewController()
+    
+    
 }
 
 extension TabbarController : UITabBarControllerDelegate {
@@ -36,7 +40,6 @@ extension TabbarController : UITabBarControllerDelegate {
             let controller = UIViewController()
             controller.view.backgroundColor = .blue
             split.showDetailViewController(controller, sender: nil)
-//            self.selectedIndex = 1
             break
             
         case 2:
@@ -61,7 +64,10 @@ extension TabbarController : UITabBarControllerDelegate {
             self.selectedIndex = 1
             return false
         default :
+            let controller = UIViewController()
+            controller.view.backgroundColor = .cyan
             split.viewControllers.remove(at: 1)
+            split.showDetailViewController(controller, sender: nil)
             return true
         }
     }
@@ -83,7 +89,13 @@ extension TabbarController {
             image: UIImage(systemName: "list.bullet"),
             selectedImage: UIImage(systemName: "list.bullet")
         )
-        viewControllers = [add, inbox]
+        let inbox2 = UIHostingController(rootView: SwiftUIView())
+        inbox2.tabBarItem = UITabBarItem(
+            title: "",
+            image: UIImage(systemName: "list.bullet"),
+            selectedImage: UIImage(systemName: "list.bullet")
+        )
+        viewControllers = [add, inbox, inbox2]
     }
     
     private func setupTabBarDesign() {
