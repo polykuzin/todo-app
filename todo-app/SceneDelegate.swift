@@ -5,12 +5,9 @@
 //  Created by polykuzin on 17/08/2022.
 //
 
-import Core
 import UIKit
 import SwiftUI
 import CoreAnalytics
-import CoreSceneModule
-import Module_Tabbar
 
 class SceneDelegate : UIResponder {
     
@@ -22,18 +19,20 @@ class SceneDelegate : UIResponder {
         ]
     )
     
-    public var coordinator = CoreSceneCoordinator()
+    let persistenceController = PersistenceController.shared
     
     @MainActor
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard
-            let windowScene = (scene as? UIWindowScene)
+            let scene = (scene as? UIWindowScene)
         else { return }
-        let controller = BaseSplitController()
-        controller.viewControllers = [TabbarController(), UIViewController()]
-        self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = controller
-        self.window?.makeKeyAndVisible()
+        window = UIWindow(windowScene: scene)
+        let controller = UIHostingController(
+            rootView: TabbarView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+        )
+        window?.rootViewController = controller
+        window?.makeKeyAndVisible()
     }
 }
 
