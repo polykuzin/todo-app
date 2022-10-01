@@ -5,6 +5,7 @@
 //  Created by polykuzin on 01/10/2022.
 //
 
+import UIKit
 import SwiftUI
 
 protocol _TasksView {
@@ -17,12 +18,19 @@ struct TasksView : View, _TasksView {
     @State var shouldShowNewTaskButton = false
     
     let pub = NotificationCenter.default
-            .publisher(for: NSNotification.Name("tasks.addNewTask"))
+        .publisher(for: NSNotification.Name("tasks.addNewTask"))
+    
+    init(viewModel: TasksViewModel, shouldShowNewTaskButton: Bool = false) {
+        self.viewModel = viewModel
+        self.shouldShowNewTaskButton = shouldShowNewTaskButton
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont.systemFont(ofSize: 17, weight: .semibold)]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize: 17, weight: .semibold)]
+    }
     
     func addNewTask() {
         shouldShowNewTaskButton.toggle()
     }
-
+    
     var body: some View {
         VStack(alignment: .leading) {
             List {
@@ -32,7 +40,7 @@ struct TasksView : View, _TasksView {
                 .onDelete { indexSet in
                     viewModel.onTaskDeleted(atOffsets: indexSet)
                 }
-                if shouldShowNewTaskButton {
+                if shouldShowNewTaskButton || viewModel.taskCellViewModels.isEmpty {
                     TaskCell(viewModel: .init(task: .init(), taskRepository: Factory.create())) { result in
                         if case .success(let task) = result {
                             viewModel.onTaskAdded(task: task)
@@ -42,9 +50,15 @@ struct TasksView : View, _TasksView {
                 }
             }
         }
+        .navigationBarItems(
+            leading: Text("All tasks")
+                .font(.system(size: 17, weight: .semibold, design: .default))
+        )
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             viewModel.onAppear()
         }
+        .listStyle(.inset)
         .onReceive(pub) { output in
             self.addNewTask()
         }

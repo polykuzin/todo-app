@@ -13,6 +13,10 @@ extension Color {
         return Color(#function)
     }
     
+    static var background : Color {
+        return Color(#function)
+    }
+    
     static var textPrimary : Color {
         return Color(#function)
     }

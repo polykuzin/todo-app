@@ -12,11 +12,11 @@ struct TabbarView : View {
     @State var selected = 1
     @State var presented = false
     let icons = [
-        "plus",
-        "gear"
+        Image.plus,
+        Image.list
     ]
     
-    var view : some View = TasksView(viewModel: .init(taskRepository: Factory.create())).navigationBarTitle("Tasks")
+    var view : some View = TasksView(viewModel: .init(taskRepository: Factory.create()))
     
     func TabbarButton(screen: GeometryProxy, number: Int) -> some View {
         Button {
@@ -27,7 +27,7 @@ struct TabbarView : View {
             }
         } label: {
             VStack {
-                Image(systemName: icons[number])
+                icons[number]
                     .font(.system(size: 25, weight: .regular, design: .default))
                     .foregroundColor(selected == number ? .blue : .gray)
             }
@@ -45,7 +45,7 @@ struct TabbarView : View {
             }
         } label: {
             VStack {
-                Image(systemName: icons[number])
+                icons[number]
                     .font(.system(size: 25, weight: .regular, design: .default))
                     .foregroundColor(
                         selected == number ? .blue : .gray
@@ -53,22 +53,22 @@ struct TabbarView : View {
             }
             .frame(width: screen.size.width / 2, height: 50)
         }
-        .contextMenu {
-            Button(action: {
-                if let view = view as? TasksView {
-                    view.addNewTask()
-                }
-            }) {
-                Text("Create new list")
-                Image(systemName: "list.bullet")
-            }
-            Button(action: {
-                // TODO: just add new task
-            }) {
-                Text("Create new task")
-                Image(systemName: "plus")
-            }
-        }
+//        .contextMenu {
+//            Button(action: {
+//                if let view = view as? TasksView {
+//                    view.addNewTask()
+//                }
+//            }) {
+//                Text("Create new list")
+//                Image(systemName: "list.bullet")
+//            }
+//            Button(action: {
+//                // TODO: just add new task
+//            }) {
+//                Text("Create new task")
+//                Image(systemName: "plus")
+//            }
+//        }
     }
         
     var body: some View {
@@ -79,7 +79,9 @@ struct TabbarView : View {
                     case 0:
                         Text("🧐🧐🧐")
                     default:
-                        view
+                        NavigationView {
+                            view
+                        }
                     }
                 }
                 Divider()
@@ -95,5 +97,6 @@ struct TabbarView : View {
                 }
             }
         }
+        .ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }

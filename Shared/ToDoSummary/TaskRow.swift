@@ -17,13 +17,14 @@ struct TaskCell: View {
     var onCommit: (Result<Task, InputError>) -> Void = { _ in }
 
     var body: some View {
-        HStack {
-            Image(systemName: viewModel.taskStateIconName)
+        HStack(alignment: .top, spacing: 10) {
+            Image(viewModel.taskStateIconName)
                 .resizable()
-                .frame(width: 20, height: 20)
+                .frame(width: 24, height: 24)
                 .onTapGesture {
                     viewModel.onTaskStateIconTapped()
                 }
+                .foregroundColor(.appColor)
             TextField(
                 "Enter task title",
                 text: $viewModel.task.title,
@@ -35,7 +36,9 @@ struct TaskCell: View {
                         onCommit(.failure(.empty))
                     }
                 }
-            ).id(viewModel.task.id)
+            )
+            .id(viewModel.task.id)
+            .autocapitalization(.sentences)
         }
     }
 }
