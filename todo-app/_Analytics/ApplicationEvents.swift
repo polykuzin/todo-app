@@ -13,4 +13,11 @@ internal struct ApplicationEvents {
         var name: String
         var metadata: [String : AnyHashable]?
     }
+    
+    public func reportAppLaunch() -> _AnalyticsEvent {
+        print(#function)
+        return AnalyticsEvent(
+            name: "appLaunch"
+        )
+    }
 }

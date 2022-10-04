@@ -8,13 +8,6 @@
 import Combine
 import Foundation
 
-struct Factory {
-    // MARK: - Repository
-    static func create() -> TaskRepository {
-        CoreDataTaskRepository(context: PersistenceController.shared.container.viewContext)
-    }
-}
-
 protocol TaskRepository {
     func save(task: Task) -> AnyPublisher<Bool, NSError>
     func fetch() -> AnyPublisher<[Task], NSError>

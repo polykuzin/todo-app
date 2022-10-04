@@ -6,22 +6,40 @@
 //
 
 import SwiftUI
+import CoreAnalytics
 
 enum InputError: Error {
-  case empty
+    case empty
 }
 
 struct TaskCell: View {
     
-    @ObservedObject var viewModel: TaskCellViewModel
-    var onCommit: (Result<Task, InputError>) -> Void = { _ in }
-
+    public init(viewModel: TaskCellViewModel, _ onCommit: @escaping (Result<Task, InputError>) -> Void = { _ in }) {
+        self.onCommit = onCommit
+        self.viewModel = viewModel
+    }
+    
+    @ObservedObject
+    private var viewModel : TaskCellViewModel
+    
+    private var tasksAnalytics = TasksAnalytics()
+    
+    @EnvironmentObject
+    private var analyticsManager : AnalyticsManager
+    
+    private var onCommit : (Result<Task, InputError>) -> Void = { _ in }
+    
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
             Image(viewModel.taskStateIconName)
                 .resizable()
                 .frame(width: 24, height: 24)
                 .onTapGesture {
+                    if viewModel.taskStateIconName == "" {
+                        analyticsManager.report(tasksAnalytics.reportTaskComplete())
+                    } else {
+                        analyticsManager.report(tasksAnalytics.reportTaskReComplete())
+                    }
                     viewModel.onTaskStateIconTapped()
                 }
                 .foregroundColor(.appColor)
@@ -31,8 +49,8 @@ struct TaskCell: View {
                 onCommit: {
                     if !viewModel.task.title.isEmpty {
                         onCommit(.success(viewModel.task))
-                    }
-                    else {
+                        analyticsManager.report(tasksAnalytics.reportTaskAdd())
+                    } else {
                         onCommit(.failure(.empty))
                     }
                 }

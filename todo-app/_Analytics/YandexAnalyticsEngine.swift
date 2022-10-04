@@ -56,6 +56,54 @@ final class YandexAnalyticsEngine {
         })
     }
     
+    public func reportProfile(profileInfo: ProfileInfo, with value: Any) {
+        switch profileInfo {
+        case .id:
+            guard let value = value as? String else { return }
+            YMMYandexMetrica.setUserProfileID(value)
+        case .premium:
+            guard let value = value as? Bool else { return }
+            let profile = YMMMutableUserProfile()
+            profile.apply(from: [
+                YMMProfileAttribute.customBool("premium").withValue(value)
+            ])
+            YMMYandexMetrica.report(profile, onFailure: { (error) in
+                print("💔💔💔 Profile was not sent")
+                print("REPORT ERROR: %@", error.localizedDescription)
+            })
+        case .appLaunch:
+            guard let value = value as? Double else { return }
+            let profile = YMMMutableUserProfile()
+            profile.apply(from: [
+                YMMProfileAttribute.customCounter("appLaunch").withDelta(value)
+            ])
+            YMMYandexMetrica.report(profile, onFailure: { (error) in
+                print("💔💔💔 Profile was not sent")
+                print("REPORT ERROR: %@", error.localizedDescription)
+            })
+        case .firstLaunch:
+            guard let value = value as? Bool else { return }
+            let profile = YMMMutableUserProfile()
+            profile.apply(from: [
+                YMMProfileAttribute.customBool("firstLaunch").withValue(value)
+            ])
+            YMMYandexMetrica.report(profile, onFailure: { (error) in
+                print("💔💔💔 Profile was not sent")
+                print("REPORT ERROR: %@", error.localizedDescription)
+            })
+        case .notifications:
+            guard let value = value as? Bool else { return }
+            let profile = YMMMutableUserProfile()
+            profile.apply(from: [
+                YMMProfileAttribute.notificationsEnabled().withValue(value)
+            ])
+            YMMYandexMetrica.report(profile, onFailure: { (error) in
+                print("💔💔💔 Profile was not sent")
+                print("REPORT ERROR: %@", error.localizedDescription)
+            })
+        }
+    }
+    
     public func reportECommerce(event: ECommerceEvent) {
         switch event {
         case .purchaseEventWithOrder(let order):

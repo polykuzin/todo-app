@@ -12,14 +12,28 @@ import CoreAnalytics
 class SceneDelegate : UIResponder {
     
     public var window : UIWindow?
+    
+    private var profileEvents = ProfileEvents()
+    
+    private var analyticsEvents = ApplicationEvents()
         
-    public var analytics = AnalyticsManager(
+    private var analyticsManager = AnalyticsManager(
         engines: [
             YandexAnalyticsEngine()
         ]
     )
     
-    let persistenceController = PersistenceController.shared
+    private let persistenceController = PersistenceController.shared
+}
+
+extension SceneDelegate : UIWindowSceneDelegate {
+    
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        analyticsManager.report(profileEvents.reportProfileId())
+        analyticsManager.report(profileEvents.reportAppLaunch())
+        analyticsManager.report(profileEvents.reportFirstLaunch())
+        analyticsManager.report(analyticsEvents.reportAppLaunch())
+    }
     
     @MainActor
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -29,18 +43,10 @@ class SceneDelegate : UIResponder {
         window = UIWindow(windowScene: scene)
         let controller = UIHostingController(
             rootView: TabbarView()
+                .environmentObject(analyticsManager)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         )
         window?.rootViewController = controller
         window?.makeKeyAndVisible()
-    }
-}
-
-extension SceneDelegate : UIWindowSceneDelegate { }
-
-extension SceneDelegate : UISplitViewControllerDelegate {
-
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        return true
     }
 }

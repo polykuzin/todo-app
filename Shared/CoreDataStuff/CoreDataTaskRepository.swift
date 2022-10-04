@@ -8,10 +8,11 @@
 import Combine
 import CoreData
 import Foundation
+import CoreAnalytics
 
 struct CoreDataTaskRepository: TaskRepository {
 
-    private let context: NSManagedObjectContext
+    private let context : NSManagedObjectContext
 
     init(context: NSManagedObjectContext) {
         self.context = context

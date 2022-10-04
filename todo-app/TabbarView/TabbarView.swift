@@ -6,17 +6,28 @@
 //
 
 import SwiftUI
+import CoreAnalytics
 
 struct TabbarView : View {
     
     @State var selected = 1
+    
     @State var presented = false
     let icons = [
         Image.plus,
         Image.list
     ]
     
-    var view : some View = TasksView(viewModel: .init(taskRepository: Factory.create()))
+    @EnvironmentObject
+    var analyticsManager : AnalyticsManager
+    
+    var view : some View = TasksView(
+        viewModel: .init(
+            taskRepository: CoreDataTaskRepository(
+                context: PersistenceController.shared.container.viewContext
+            )
+        )
+    )
     
     func TabbarButton(screen: GeometryProxy, number: Int) -> some View {
         Button {
@@ -80,7 +91,7 @@ struct TabbarView : View {
                         Text("🧐🧐🧐")
                     default:
                         NavigationView {
-                            view
+                            self.view.environmentObject(analyticsManager)
                         }
                     }
                 }

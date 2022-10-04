@@ -12,7 +12,9 @@ public protocol _AnalyticsEngine {
     func reportError(id: String, message: String, metadata: [String: AnyHashable]?)
 
     func reportRevenue(id: String, price: String, currency: String, quantity: Int)
-
+    
+    func reportProfile(profileInfo: ProfileInfo, with: Any)
+    
     func reportECommerce(event: ECommerceEvent)
 }
 

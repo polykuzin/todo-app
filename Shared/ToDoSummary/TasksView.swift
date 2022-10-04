@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import CoreAnalytics
 
 protocol _TasksView {
     
@@ -14,22 +15,31 @@ protocol _TasksView {
 }
 
 struct TasksView : View, _TasksView {
-    @ObservedObject var viewModel: TasksViewModel
-    @State var shouldShowNewTaskButton = false
     
-    let pub = NotificationCenter.default
-        .publisher(for: NSNotification.Name("tasks.addNewTask"))
+    public func addNewTask() {
+        shouldShowNewTaskButton.toggle()
+    }
     
-    init(viewModel: TasksViewModel, shouldShowNewTaskButton: Bool = false) {
+    public init(viewModel: TasksViewModel, shouldShowNewTaskButton: Bool = false) {
         self.viewModel = viewModel
         self.shouldShowNewTaskButton = shouldShowNewTaskButton
         UINavigationBar.appearance().titleTextAttributes = [.font : UIFont.systemFont(ofSize: 17, weight: .semibold)]
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont.systemFont(ofSize: 17, weight: .semibold)]
     }
     
-    func addNewTask() {
-        shouldShowNewTaskButton.toggle()
-    }
+    @ObservedObject
+    private var viewModel : TasksViewModel
+    
+    public var tasksAnalytics = TasksAnalytics()
+    
+    @EnvironmentObject
+    private var analyticsManager : AnalyticsManager
+    
+    @State
+    private var shouldShowNewTaskButton = false
+    
+    private var publisher = NotificationCenter.default
+        .publisher(for: NSNotification.Name("tasks.addNewTask"))
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -39,9 +49,17 @@ struct TasksView : View, _TasksView {
                 }
                 .onDelete { indexSet in
                     viewModel.onTaskDeleted(atOffsets: indexSet)
+                    analyticsManager.report(tasksAnalytics.reportTaskDelete())
                 }
                 if shouldShowNewTaskButton || viewModel.taskCellViewModels.isEmpty {
-                    TaskCell(viewModel: .init(task: .init(), taskRepository: Factory.create())) { result in
+                    TaskCell(
+                        viewModel: .init(
+                            task: .init(),
+                            taskRepository: CoreDataTaskRepository(
+                                context: PersistenceController.shared.container.viewContext
+                            )
+                        )
+                    ) { result in
                         if case .success(let task) = result {
                             viewModel.onTaskAdded(task: task)
                         }
@@ -59,7 +77,7 @@ struct TasksView : View, _TasksView {
             viewModel.onAppear()
         }
         .listStyle(.inset)
-        .onReceive(pub) { output in
+        .onReceive(publisher) { output in
             self.addNewTask()
         }
     }

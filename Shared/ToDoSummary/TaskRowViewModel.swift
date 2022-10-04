@@ -10,14 +10,16 @@ import SwiftUI
 
 class TaskCellViewModel: ObservableObject, Identifiable {
     
-    @Published
-    var task: Task
+    public var id : String {
+        task.id
+    }
     
     @Published
-    var taskStateIconName = ""
-
-    var id: String { task.id }
-
+    public var task: Task
+    
+    @Published
+    public var taskStateIconName = ""
+    
     private let taskRepository: TaskRepository
 
     private var cancellables = Set<AnyCancellable>()
